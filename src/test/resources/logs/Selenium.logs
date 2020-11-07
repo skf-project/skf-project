@@ -1,0 +1,8 @@
+02:26:11,126 DEBUG devpinoyLogger<strong>{1}</strong>:34 - Config file loaded
+02:26:15,374 DEBUG devpinoyLogger<strong>{1}</strong>:40 - URL https://d1u4jj5zwfsfjn.cloudfront.net/turbine-overview Open
+02:26:18,994 DEBUG devpinoyLogger<strong>{1}</strong>:42 - Maximize Browser
+02:26:24,186 DEBUG devpinoyLogger<strong>{1}</strong>:51 - Login Failed
+02:26:25,762 DEBUG devpinoyLogger<strong>{1}</strong>:41 - Login Failed
+02:26:27,309 DEBUG devpinoyLogger<strong>{1}</strong>:61 - Login Failed
+02:26:38,750 DEBUG devpinoyLogger<strong>{1}</strong>:31 - Login Successfull
+02:26:39,607 DEBUG devpinoyLogger<strong>{1}</strong>:68 - Browser closed
