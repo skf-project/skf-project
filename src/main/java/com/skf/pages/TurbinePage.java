@@ -59,6 +59,14 @@ public class TurbinePage extends Page {
 		return driver.findElement(By.xpath("//a[@class='Modal-module_close__gwtTs']"));
 	}
 	
+	public WebElement user() {
+		return driver.findElement(By.cssSelector(".UserItem-module_userItem__2LLsr > .UserItem-module_userName__3cQ3Y"));
+	}
+	
+	public WebElement signOut() {
+		return driver.findElement(By.xpath("//div[contains(text(),'Sign Out')]"));
+	}
+	
 	
 
 }

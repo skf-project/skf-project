@@ -3,6 +3,7 @@ package com.skf.testcases;
 import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import com.skf.base.Page;
@@ -15,8 +16,8 @@ public class Turbine extends Page {
 	public void turbine() {
 
 		LoginPage loginPage = new LoginPage();
-		TurbinePage turbinePage= loginPage.loginApp("test_Wind_1", "2D.tu68D2");
-        //waitForElement(turbinePage.filterLabel());
+		loginPage.loginApp("test_Wind_1", "2D.tu68D2");
+		TurbinePage turbinePage = new TurbinePage();
 		turbinePage.turbineDropdown().click();
 		turbinePage.firstValueOfTurbineDropDown().click();
 		turbinePage.filterLabel().click();
@@ -28,9 +29,17 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.previousActionTakenOnHeaderPopUp().isDisplayed());
 		turbinePage.reportFaultButtonOnHeaderPopUp().isDisplayed();
 		turbinePage.reportFeedbackButtonOnHeaderPop().isDisplayed();
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("arguments[0].click()", turbinePage.closeButtonOnHeaderPop());
-		//turbinePage.closeButtonOnHeaderPop().click();
+		turbinePage.user().click();
+		turbinePage.signOut().click();
+	}
 
+	@AfterMethod
+	public void tearDown() {
+		System.out.println("Login teardown");
+		Page.driver.close();
+		driver = null;
+		log.debug("Browser closed");
 	}
 }
