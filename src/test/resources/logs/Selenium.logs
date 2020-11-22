@@ -1,29 +1,4 @@
-19:27:57,049 DEBUG devpinoyLogger<strong>{1}</strong>:35 - Config file loaded
-19:28:03,640 DEBUG devpinoyLogger<strong>{1}</strong>:46 - URL https://d1u4jj5zwfsfjn.cloudfront.net/turbine-overview Open
-19:28:08,286 DEBUG devpinoyLogger<strong>{1}</strong>:48 - Maximize Browser
-19:28:14,328 DEBUG devpinoyLogger<strong>{1}</strong>:54 - Login Failed
-19:28:15,070 DEBUG devpinoyLogger<strong>{1}</strong>:84 - Browser closed
-19:28:15,073 DEBUG devpinoyLogger<strong>{1}</strong>:35 - Config file loaded
-19:28:19,234 DEBUG devpinoyLogger<strong>{1}</strong>:46 - URL https://d1u4jj5zwfsfjn.cloudfront.net/turbine-overview Open
-19:28:23,396 DEBUG devpinoyLogger<strong>{1}</strong>:48 - Maximize Browser
-19:28:29,466 DEBUG devpinoyLogger<strong>{1}</strong>:44 - Login Failed
-19:28:30,302 DEBUG devpinoyLogger<strong>{1}</strong>:84 - Browser closed
-19:28:30,306 DEBUG devpinoyLogger<strong>{1}</strong>:35 - Config file loaded
-19:28:34,259 DEBUG devpinoyLogger<strong>{1}</strong>:46 - URL https://d1u4jj5zwfsfjn.cloudfront.net/turbine-overview Open
-19:28:37,714 DEBUG devpinoyLogger<strong>{1}</strong>:48 - Maximize Browser
-19:28:43,704 DEBUG devpinoyLogger<strong>{1}</strong>:64 - Login Failed
-19:28:43,989 DEBUG devpinoyLogger<strong>{1}</strong>:84 - Browser closed
-19:28:43,991 DEBUG devpinoyLogger<strong>{1}</strong>:35 - Config file loaded
-19:28:48,066 DEBUG devpinoyLogger<strong>{1}</strong>:46 - URL https://d1u4jj5zwfsfjn.cloudfront.net/turbine-overview Open
-19:28:52,583 DEBUG devpinoyLogger<strong>{1}</strong>:48 - Maximize Browser
-19:29:13,509 DEBUG devpinoyLogger<strong>{1}</strong>:32 - Login Successfull
-19:29:17,168 DEBUG devpinoyLogger<strong>{1}</strong>:84 - Browser closed
-19:29:17,170 DEBUG devpinoyLogger<strong>{1}</strong>:35 - Config file loaded
-19:29:21,454 DEBUG devpinoyLogger<strong>{1}</strong>:46 - URL https://d1u4jj5zwfsfjn.cloudfront.net/turbine-overview Open
-19:29:25,001 DEBUG devpinoyLogger<strong>{1}</strong>:48 - Maximize Browser
-19:29:28,737 DEBUG devpinoyLogger<strong>{1}</strong>:77 - Login component verified
-19:29:28,943 DEBUG devpinoyLogger<strong>{1}</strong>:84 - Browser closed
-19:29:28,995 DEBUG devpinoyLogger<strong>{1}</strong>:35 - Config file loaded
-19:29:32,996 DEBUG devpinoyLogger<strong>{1}</strong>:46 - URL https://d1u4jj5zwfsfjn.cloudfront.net/turbine-overview Open
-19:29:36,436 DEBUG devpinoyLogger<strong>{1}</strong>:48 - Maximize Browser
-19:30:25,004 DEBUG devpinoyLogger<strong>{1}</strong>:43 - Browser closed
+19:07:54,657 DEBUG devpinoyLogger<strong>{1}</strong>:35 - Config file loaded
+19:08:00,169 DEBUG devpinoyLogger<strong>{1}</strong>:46 - URL https://d1u4jj5zwfsfjn.cloudfront.net/turbine-overview Open
+19:08:03,787 DEBUG devpinoyLogger<strong>{1}</strong>:48 - Maximize Browser
+19:08:28,530 DEBUG devpinoyLogger<strong>{1}</strong>:149 - Browser closed

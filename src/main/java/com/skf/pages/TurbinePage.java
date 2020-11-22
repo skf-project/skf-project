@@ -11,9 +11,9 @@ public class TurbinePage extends Page {
 	public void javaScriptCLick(WebElement clickableElement) {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("arguments[0].click()", clickableElement);
-		
+
 	}
-	
+
 	public WebElement turbineDropdown() {
 		return driver.findElement(
 				By.cssSelector(".Filter-module_filterSelectors__23t1h div:nth-of-type(5) [class='css-19bqh2r']"));
@@ -23,89 +23,110 @@ public class TurbinePage extends Page {
 		return driver.findElement(By.cssSelector("#react-select-7-option-1"));
 
 	}
-	
+
 	public WebElement filterLabel() {
 		return driver.findElement(By.xpath("//section[@id='filtersSideBar']//b[.='Filters']"));
 
 	}
-	
+
 	public WebElement mapTurbine() {
-		return driver.findElement(By.cssSelector("[class='FarmChild-module_circle__2jw-1 FarmChild-module_unknown__2O--X']"));
+		return driver.findElement(
+				By.cssSelector("[class='FarmChild-module_circle__2jw-1 FarmChild-module_unknown__2O--X']"));
 	}
-	
+
 	public WebElement turbineNameOnHeaderPopUp() {
-		return driver.findElement(By.cssSelector(".Modal-module_border__2Chp-.Modal-module_header__3mk20.Modal-module_row__2MZeo.undefined > .Modal-module_title__3abYu"));
+		return driver.findElement(By.cssSelector(
+				".Modal-module_border__2Chp-.Modal-module_header__3mk20.Modal-module_row__2MZeo.undefined > .Modal-module_title__3abYu"));
 	}
-	
+
 	public WebElement currentStatusOnHeaderPopUp() {
 		return driver.findElement(By.xpath("//label[contains(text(),'Current status')]"));
 	}
-	
+
 	public WebElement nextPlannedActionOnHeaderPopUp() {
 		return driver.findElement(By.xpath("//label[contains(text(),'Next planned action')]"));
 	}
-	
+
 	public WebElement indicatedFaultOnHeaderPopUp() {
 		return driver.findElement(By.xpath("//label[contains(text(),'Indicated fault')]"));
 	}
-	
+
 	public WebElement previousActionTakenOnHeaderPopUp() {
 		return driver.findElement(By.xpath("//label[contains(text(),'Previous action taken')]"));
 	}
-	
+
 	public WebElement reportFaultButtonOnHeaderPopUp() {
 		return driver.findElement(By.xpath("//button[contains(text(),'Report fault')]"));
 	}
-	
+
 	public WebElement reportFeedbackButtonOnHeaderPop() {
 		return driver.findElement(By.xpath("//button[contains(text(),'Report feedback')]"));
 	}
-	
+
 	public WebElement closeButtonOnHeaderPop() {
 		return driver.findElement(By.xpath("//a[@class='Modal-module_close__gwtTs']"));
 	}
-	
+
 	public WebElement user() {
-		return driver.findElement(By.cssSelector(".UserItem-module_userItem__2LLsr > .UserItem-module_userName__3cQ3Y"));
+		return driver
+				.findElement(By.cssSelector(".UserItem-module_userItem__2LLsr > .UserItem-module_userName__3cQ3Y"));
 	}
-	
+
 	public WebElement signOut() {
 		return driver.findElement(By.xpath("//div[contains(text(),'Sign Out')]"));
 	}
-	
+
 	public WebElement countryDropdown() {
 		return driver.findElement(
 				By.cssSelector(".Filter-module_filterSelectors__23t1h > div:nth-of-type(2) [class='css-19bqh2r']"));
 	}
-	
+
 	public WebElement countrySelectAllDropDownValue() {
-		return driver.findElement(
-				By.cssSelector("#react-select-4-option-0"));
+		return driver.findElement(By.cssSelector("#react-select-4-option-0"));
 	}
-	
+
 	public WebElement countrySelectFirstValueBEL() {
-		return driver.findElement(
-				By.cssSelector("#react-select-4-option-1"));
+		return driver.findElement(By.cssSelector("#react-select-4-option-1"));
 	}
-	
+
 	public WebElement clearAllLink() {
 		return driver.findElement(
 				By.cssSelector("#filtersSideBar > div > div > div.Filter-module_filterHeader__JueI_ > span"));
 	}
-	
+
 	public WebElement countryTickMark() {
-		return driver.findElement(
-				By.cssSelector("#filtersSideBar > div > div > div.Filter-module_filterSelectors__23t1h > div:nth-child(2) > div.IconCheck-module_iconCheck__39ORN.IconCheck-module_iconCheck--circled__1_WLU.SelectInputMultiple-module_iconSelected__MKAgb > div"));
+		return driver.findElement(By.cssSelector(
+				"#filtersSideBar > div > div > div.Filter-module_filterSelectors__23t1h > div:nth-child(2) > div.IconCheck-module_iconCheck__39ORN.IconCheck-module_iconCheck--circled__1_WLU.SelectInputMultiple-module_iconSelected__MKAgb > div"));
 	}
+
 	public WebElement countryTextDropdown() {
-		return driver.findElement(
-				By.xpath("//div[contains(text(),'Country')]"));
+		return driver.findElement(By.xpath("//div[contains(text(),'Country')]"));
 	}
-	
+
 	public WebElement countryNoOptionDropdownValue() {
+		return driver.findElement(By.xpath("//div[contains(text(),'No options')]"));
+	}
+
+	public WebElement ownerDropdown() {
 		return driver.findElement(
-				By.xpath("//div[contains(text(),'No options')]"));
+				By.cssSelector(".Filter-module_filterSelectors__23t1h div:nth-of-type(3) [class='css-19bqh2r']"));
+	}
+
+	public WebElement ownerSelectAllDropdownValue() {
+		return driver.findElement(By.cssSelector("#react-select-5-option-0"));
+	}
+
+	public WebElement ownerSelectFirstValue() {
+		return driver.findElement(By.cssSelector("#react-select-5-option-1"));
+	}
+
+	public WebElement ownerTickMark() {
+		return driver.findElement(By.cssSelector(
+				"#filtersSideBar > div > div > div.Filter-module_filterSelectors__23t1h > div:nth-child(3) > div.IconCheck-module_iconCheck__39ORN.IconCheck-module_iconCheck--circled__1_WLU.SelectInputMultiple-module_iconSelected__MKAgb"));
 	}
 	
+	public WebElement searchWindFarmTextBox() {
+		return driver.findElement(By.cssSelector("#windFarms > div.TurbineOverview_search__13wq7 > div > div > div > div.react-select__value-container.css-1hwfws3"));
+	}
 
 }
