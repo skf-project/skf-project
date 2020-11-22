@@ -64,9 +64,21 @@ public class Login extends Page {
 		log.debug("Login Failed");
 	}
 	
+	@Test
+	public void verifyLoginPageComponent() throws IOException {
+		LoginPage loginPage = new LoginPage();
+		assertTrue(loginPage.usernameTextBox().isDisplayed());
+		assertTrue(loginPage.passwordTextBox().isDisplayed());
+		assertTrue(loginPage.signInButton().isDisplayed());
+		assertTrue(loginPage.forgotYourPasswordLink().isDisplayed());
+		assertTrue(loginPage.corporateLoginSKFButton().isDisplayed());
+		String label=loginPage.signwithUsernamePasswordLabel().getText();
+		assertTrue(label.equalsIgnoreCase("Sign in with your username and password"));
+		log.debug("Login component verified");
+	}
+	
 	@AfterMethod
 	public void tearDown() {
-		System.out.println("Login teardown");
 		Page.driver.close();
 		driver=null;
 		log.debug("Browser closed");
