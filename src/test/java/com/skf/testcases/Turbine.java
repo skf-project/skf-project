@@ -27,8 +27,7 @@ public class Turbine extends Page {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginApp(config.getProperty("validUsername"),
-				config.getProperty("validPassword"));
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		TurbinePage turbinePage = new TurbinePage();
 		turbinePage.turbineDropdown().click();
 		turbinePage.firstValueOfTurbineDropDown().click();
@@ -53,8 +52,7 @@ public class Turbine extends Page {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginApp(config.getProperty("validUsername"),
-				config.getProperty("validPassword"));
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		TurbinePage turbinePage = new TurbinePage();
 		turbinePage.countryDropdown().click();
 		assertTrue(turbinePage.countrySelectAllDropDownValue().isDisplayed());
@@ -72,15 +70,15 @@ public class Turbine extends Page {
 		turbinePage.countrySelectFirstValueBEL().click();
 		assertTrue(turbinePage.countryTickMark().isEnabled());
 	}
+
 	@Test
 	public void countryFilterTypingFuntionality() throws InterruptedException, IOException, AWTException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
-		CommonUtilities utilities= new CommonUtilities();
-		loginPage.loginApp(config.getProperty("validUsername"),
-				config.getProperty("validPassword"));
+		CommonUtilities utilities = new CommonUtilities();
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		TurbinePage turbinePage = new TurbinePage();
 		turbinePage.countryDropdown().click();
 		utilities.javaScriptExecutorType("BEL");
@@ -88,6 +86,48 @@ public class Turbine extends Page {
 		utilities.javaScriptExecutorType("InvalidInput");
 		assertTrue(turbinePage.countryNoOptionDropdownValue().isDisplayed());
 	}
+	
+	@Test
+	public void ownerFilterFuntionality() throws InterruptedException, IOException {
+
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+		TurbinePage turbinePage = new TurbinePage();
+		turbinePage.ownerDropdown().click();
+		assertTrue(turbinePage.ownerSelectAllDropdownValue().isDisplayed());
+		turbinePage.ownerSelectFirstValue().click();
+		assertTrue(turbinePage.clearAllLink().isDisplayed());
+		assertTrue(turbinePage.ownerTickMark().isEnabled());
+		turbinePage.clearAllLink().click();
+		turbinePage.ownerDropdown().click();
+		turbinePage.ownerSelectAllDropdownValue().click();
+		assertTrue(turbinePage.ownerTickMark().isEnabled());
+		turbinePage.clearAllLink().click();
+		turbinePage.ownerDropdown().click();
+		assertTrue(turbinePage.ownerSelectAllDropdownValue().isDisplayed());
+		turbinePage.ownerSelectFirstValue().click();
+		assertTrue(turbinePage.clearAllLink().isDisplayed());
+		assertTrue(turbinePage.ownerTickMark().isEnabled());
+	}	
+	
+	@Test
+	public void ownerFilterTypingFuntionality() throws InterruptedException, IOException, AWTException {
+
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		CommonUtilities utilities = new CommonUtilities();
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+		TurbinePage turbinePage = new TurbinePage();
+		turbinePage.ownerDropdown().click();
+		utilities.javaScriptExecutorType("Boralex");
+		assertTrue(turbinePage.ownerSelectFirstValue().isDisplayed());
+		utilities.javaScriptExecutorType("InvalidInput");
+		assertTrue(turbinePage.countryNoOptionDropdownValue().isDisplayed());
+	}
+
 	@AfterMethod
 	public void tearDown() {
 		Page.driver.close();
