@@ -47,7 +47,7 @@ public class Turbine extends Page {
 		turbinePage.signOut().click();
 	}
 
-	@Test(enabled = false)
+	@Test
 	public void countryFilterFuntionality() throws InterruptedException, IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -87,8 +87,6 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.countrySelectFirstValueBEL().isDisplayed());
 		utilities.javaScriptExecutorType("InvalidInput");
 		assertTrue(turbinePage.countryNoOptionDropdownValue().isDisplayed());
-		Thread.sleep(5000);
-
 	}
 	@AfterMethod
 	public void tearDown() {
