@@ -76,7 +76,17 @@ public class Login extends Page {
 		assertTrue(label.equalsIgnoreCase("Sign in with your username and password"));
 		log.debug("Login component verified");
 	}
-	
+	@Test
+	public void forgotYourPasswordVerify() throws IOException {
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		loginPage.forgotYourPasswordLink().click();
+		assertTrue(loginPage.forgotPasswordLabel().isDisplayed());
+		assertTrue(loginPage.forgotPasswordMessage().isDisplayed());
+		assertTrue(loginPage.userNameTextBox().isEnabled());
+		assertTrue(loginPage.resetPasswordButton().isDisplayed());
+	}
 	@AfterMethod
 	public void tearDown() {
 		Page.driver.close();

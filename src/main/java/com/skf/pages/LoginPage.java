@@ -53,4 +53,20 @@ public class LoginPage extends Page {
 		return driver.findElement(By.xpath(
 				"//div[@class='modal-body']/div[2]/div[2]/div[2]/div/form[@name='cognitoSignInForm']/p[@id='loginErrorMessage']"));
 	}
+    public WebElement forgotPasswordLabel() {
+    	return driver.findElement(By.xpath("//h1[normalize-space()='Forgot your password?']"));
+    }
+    public WebElement forgotPasswordMessage() {
+    	return driver.findElement(By.xpath("//span[contains(text(),'Enter your Username below and we will send a messa')]"));
+    }
+    public WebElement userNameTextBox() {
+		return driver.findElement(By.xpath("//input[@id='username']"));
+    	
+    }
+    public WebElement userNamePlaceholder() {
+    	return driver.findElement(By.xpath("//input[@placeholder='Username']"));
+    }
+    public WebElement resetPasswordButton() {
+    	return driver.findElement(By.xpath("//button[normalize-space()='Reset my password']"));
+    }
 }
