@@ -63,7 +63,18 @@ public class Login extends Page {
 		assertTrue(loginPage.incorrectandpasswordlabel().isDisplayed());
 		log.debug("Login Failed");
 	}
-	
+	@Test
+	public void forgotYourPasswordVerify() throws IOException {
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		loginPage.forgotPasswordLink().click();
+		assertTrue(loginPage.forgotPasswordLabel().isDisplayed());
+		assertTrue(loginPage.forgotPasswordMessage().isDisplayed());
+		assertTrue(loginPage.userNameTextBox().isEnabled());
+		assertTrue(loginPage.resetPasswordButton().isDisplayed());
+		
+	}
 	@AfterMethod
 	public void tearDown() {
 		System.out.println("Login teardown");
