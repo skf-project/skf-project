@@ -1,5 +1,6 @@
 package com.skf.testcases;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.FileInputStream;
@@ -87,6 +88,17 @@ public class Login extends Page {
 		assertTrue(loginPage.userNameTextBox().isEnabled());
 		assertTrue(loginPage.resetPasswordButton().isDisplayed());
 	}
+	
+	@Test
+	public void checkingPlaceHolder() throws IOException {
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		assertEquals(ExpectedUserNamePlaceHolder, loginPage.userNamePlaceHolder());
+		assertEquals(ExpectedPassWordPlaceHolder, loginPage.passWordPlaceHolder());
+		log.debug("PlaceHolder Passed");
+	}
+	
 	@AfterMethod
 	public void tearDown() {
 		Page.driver.close();

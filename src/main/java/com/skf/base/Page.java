@@ -20,6 +20,8 @@ public class Page {
 	public static Properties OR = new Properties();
 	public static FileInputStream fisco;
 	public static Logger log = Logger.getLogger("devpinoyLogger");
+	public String ExpectedUserNamePlaceHolder = "Username";
+	public String ExpectedPassWordPlaceHolder = "Password";
 
 
 	@BeforeMethod
