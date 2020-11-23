@@ -128,5 +128,91 @@ public class TurbinePage extends Page {
 	public WebElement searchWindFarmTextBox() {
 		return driver.findElement(By.cssSelector("#windFarms > div.TurbineOverview_search__13wq7 > div > div > div > div.react-select__value-container.css-1hwfws3"));
 	}
+	
+	public WebElement openEventLabelText() {
+		return driver.findElement(
+				By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[2]/div/div/section[1]/div/div[1]/div/label"));
+	}
+	
+	public WebElement workOrdersLabelText() {
+		return driver.findElement(
+				By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[2]/div/div/section[1]/div/div[2]/div/label"));
+	}
 
+	public WebElement overdueLabelText() {
+		return driver.findElement(
+				By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[2]/div/div/section[1]/div/div[3]/div/label"));
+	}
+	
+	public WebElement filtersLabelText() {
+		return driver.findElement(
+				By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[1]/b"));
+	}
+	
+	public WebElement searchLabelText() {
+		return driver.findElement(
+				By.xpath("//*[@id=\"windFarms\"]/div[1]/span"));
+	}
+	
+	public WebElement lastSubmitedEventReportsLabelText() {
+		return driver.findElement(
+				By.xpath("//*[@id=\"eventReports\"]/span"));
+	}
+	
+	public WebElement windFarmMapLabelText() {
+		return driver.findElement(
+				By.xpath("//*[@id=\"windFarms\"]/span"));
+	}
+	
+	public WebElement regionDropdownFilter()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[1]/div[1]/div"));
+	}
+	
+	public WebElement regionDropdownEUOption()
+	{
+		return driver.findElement(By.cssSelector("#react-select-3-option-0"));
+	}
+	
+	public WebElement regiontickMark()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[1]/div[2]/div"));
+	}
+		
+	public WebElement regionNoOptionDropdownValue() {
+		return driver.findElement(
+				By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[1]/div/div[2]/div/div"));
+	}
+	
+	public WebElement windFarmDropdownFilter()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[4]/div/div/div[1]"));
+	}
+	
+	public WebElement windFarmDropdownClerimoisOption()
+	{
+		return driver.findElement(By.cssSelector("#react-select-6-option-7"));
+	}
+	
+	public WebElement windFarmSelectAllDropdownOption() {
+		return driver.findElement(By.cssSelector("#react-select-6-option-0"));
+	}
+	
+	public WebElement windFarmtickMark()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[4]/div[2]"));
+	}
+		
+	public WebElement windFarmNoOptionDropdownValue() {
+		return driver.findElement(
+				By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[4]/div/div[2]/div/div"));
+	}
+	
+	public WebElement windFarmSelectFirstValueArtois() {
+		return driver.findElement(By.cssSelector("#react-select-6-option-1"));
+	}
+	
+	public WebElement windFarmSelectFifthValueCalmont() {
+		return driver.findElement(By.cssSelector("#react-select-6-option-5"));
+	}
 }
