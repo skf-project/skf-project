@@ -1,5 +1,7 @@
 package com.skf.pages;
 
-public class ReportFaultPage {
+import com.skf.base.Page;
+
+public class ReportFaultPage extends Page{
 
 }

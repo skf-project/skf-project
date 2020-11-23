@@ -69,4 +69,16 @@ public class LoginPage extends Page {
     public WebElement resetPasswordButton() {
     	return driver.findElement(By.xpath("//button[normalize-space()='Reset my password']"));
     }
+    
+	public String userNamePlaceHolder() {
+		String username=driver.findElement(By.xpath("//div[@class='modal-dialog']/div[2]//form[@name='cognitoSignInForm']//input[@id='signInFormUsername']")).getAttribute("placeholder");
+		
+		return username;
+	}
+	
+	public String passWordPlaceHolder() {
+		String password=driver.findElement(By.xpath("//div[@class='modal-dialog']/div[2]//form[@name='cognitoSignInForm']//input[@id='signInFormPassword']")).getAttribute("placeholder");
+		
+		return password;
+	}
 }
