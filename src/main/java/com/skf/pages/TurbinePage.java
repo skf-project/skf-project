@@ -215,4 +215,21 @@ public class TurbinePage extends Page {
 	public WebElement windFarmSelectFifthValueCalmont() {
 		return driver.findElement(By.cssSelector("#react-select-6-option-5"));
 	}
+	
+	public WebElement windFarmSearchDropdown() {
+		return driver.findElement(By.xpath("//*[@id=\"windFarms\"]//div[@class=\"react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer\"]"));
+	}
+	
+	public WebElement windFarmSearchRecord() {
+		return driver.findElement(By.xpath("//*[@class=\"react-select__menu-list css-11unzgr\"]//div[contains(text(),'WO B2 15550821')]"));
+	}
+	
+	public WebElement windFarmSearchRecordOnMap() {
+		return driver.findElement(By.cssSelector("div:nth-of-type(273) > .FarmChild-module_child__T4JfU > div"));
+	}
+	
+	public WebElement windFarmSearchSeeAllSearchResult() {
+		return driver.findElement(By.xpath("//*[@id=\"windFarms\"]//span[contains(text(),'See all search results')]"));
+	}
+
 }
