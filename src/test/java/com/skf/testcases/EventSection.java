@@ -1,6 +1,5 @@
 package com.skf.testcases;
 
-import static org.junit.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.awt.AWTException;
