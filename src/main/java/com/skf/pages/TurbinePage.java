@@ -225,7 +225,7 @@ public class TurbinePage extends Page {
 	}
 	
 	public WebElement windFarmSearchRecordOnMap() {
-		return driver.findElement(By.cssSelector("div:nth-of-type(273) > .FarmChild-module_child__T4JfU > div"));
+		return driver.findElement(By.xpath("//*[@id=\"Map-module_map__utoEh\"]//div[@class=\"FarmChild-module_child__T4JfU\"]/label[contains(text(),'WO B2 15550821')]/../div[1]"));
 	}
 	
 	public WebElement windFarmSearchSeeAllSearchResult() {
@@ -284,6 +284,10 @@ public class TurbinePage extends Page {
     
     public WebElement skflink() {
     	return driver.findElement(By.cssSelector("#root > div:nth-child(2) > div.Navigator-module_navigator__1WRTE.undefined > div > ul > li.Navigator-module_logo__1bP1h"));
+    }
+    
+    public WebElement reportFaultButton() {
+    	return driver.findElement(By.xpath("//*[@id=\"root\"]//button[contains(text(),'Report fault')]"));
     }
 
 }
