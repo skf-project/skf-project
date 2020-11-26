@@ -28,4 +28,35 @@ public class ReportFaultPage extends Page {
 	public WebElement eventDropDownValueNewEvent() {
 		return driver.findElement(By.cssSelector("#react-select-2-option-9"));
 	}
+	
+	public WebElement customerEventIdLabel() {
+		return driver.findElement(By.xpath("//div[@class=\"ReportFaultModalRightSide_contentWithLabel__QGWRA\"]/div[contains(text(),\"Custom event id\")]"));
+	}
+	
+	public WebElement indicatedFaultLabel() {
+		return driver.findElement(By.xpath("//b[contains(text(),\"Indicated fault\")]"));
+	}
+	
+	public WebElement positionLabel() {
+		return driver.findElement(By.xpath("//b[contains(text(),\"Position\")]"));
+	}
+	
+	public WebElement severityLabel() {
+		return driver.findElement(By.xpath("//b[contains(text(),\"Severity\")]"));
+	}
+	
+	public WebElement commentLabel() {
+		return driver.findElement(By.xpath("//b[contains(text(),\"Comment\")]"));
+	}
+	public WebElement workOrdersLabel() {
+		return driver.findElement(By.xpath("//b[contains(text(),\"WORK ORDERS\")]"));
+	}
+	
+	public WebElement addButtonLabel() {
+		return driver.findElement(By.xpath("//*[@class=\"ReportFaultModalRightSide_contentWithLabel__QGWRA\"]//div[contains(text(),\"Add\")]"));
+	}
+	
+	public WebElement approveLabel() {
+		return driver.findElement(By.xpath("//div[contains(text(),\"Approved\")]"));
+	}
 }

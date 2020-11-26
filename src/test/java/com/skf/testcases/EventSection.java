@@ -49,7 +49,14 @@ public class EventSection extends Page {
 		Thread.sleep(3000);
 		utilities.javaScriptExecutorType("New event");
 		reportFault.eventDropDownValueNewEvent().click();
-		Thread.sleep(5000);
+		//Verify the event section label
+		assertTrue(reportFault.customerEventIdLabel().isDisplayed());
+		assertTrue(reportFault.indicatedFaultLabel().isDisplayed());
+		assertTrue(reportFault.positionLabel().isDisplayed());
+		assertTrue(reportFault.severityLabel().isDisplayed());
+		assertTrue(reportFault.workOrdersLabel().isDisplayed());
+		assertTrue(reportFault.addButtonLabel().isDisplayed());
+		assertTrue(reportFault.approveLabel().isDisplayed());
 	}
 	
 	@AfterMethod(enabled=true)
