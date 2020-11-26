@@ -4,4 +4,4 @@ target
 test-output
 .settings
 /src/test/resources/extentconfig/
-*.logs
+/src/test/resources/logs
