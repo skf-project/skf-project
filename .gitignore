@@ -4,4 +4,5 @@ target
 test-output
 .settings
 src/test/resources/extentconfig/
-src/test/resources/logs/
+src/test/resources/logs/Application.logs
+src/test/resources/logs/Selenium.logs
