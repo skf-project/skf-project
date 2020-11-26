@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 
 import com.skf.base.Page;
 import com.skf.pages.LoginPage;
-import com.skf.pages.TurbineOverviewPage;
 import com.skf.pages.TurbinePage;
 import com.skf.utilities.CommonUtilities;
 
@@ -300,29 +299,28 @@ public class Turbine extends Page {
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		TurbinePage turbinePage = new TurbinePage();
-		TurbineOverviewPage turbineOverviewPage = new TurbineOverviewPage();
-		assertTrue(turbineOverviewPage.turbineoverviewlabel().isDisplayed());
+		assertTrue(turbinePage.turbineoverviewlabel().isDisplayed());
 		turbinePage.turbineDropdown().click();
-		System.out.println(turbineOverviewPage.firstValueOfTurbineDropDown().getText());
-		turbineOverviewPage.firstValueOfTurbineDropDown().click();
-		System.out.println(turbineOverviewPage.firstValueOfTurbineDropDown().getText());
-		assertTrue(turbineOverviewPage.clearall().isDisplayed());
-		System.out.println(turbineOverviewPage.isclearallpresent());
-		assertTrue(turbineOverviewPage.tick().isDisplayed());
-		turbineOverviewPage.clearall().click();
-		System.out.println(turbineOverviewPage.isclearallpresent());
+		System.out.println(turbinePage.firstValueOfTurbineDropDown().getText());
+		turbinePage.firstValueOfTurbineDropDown().click();
+		System.out.println(turbinePage.firstValueOfTurbineDropDown().getText());
+		assertTrue(turbinePage.clearall().isDisplayed());
+		System.out.println(turbinePage.isclearallpresent());
+		assertTrue(turbinePage.tick().isDisplayed());
+		turbinePage.clearall().click();
+		System.out.println(turbinePage.isclearallpresent());
 		turbinePage.turbineDropdown().click();
-		turbineOverviewPage.secondValueOfTurbineDropDown().click();
-		turbineOverviewPage.thirdValueOfTurbineDropDown().click();
-		assertTrue(turbineOverviewPage.clearall().isDisplayed());
-		turbineOverviewPage.clearall().click();
+		turbinePage.secondValueOfTurbineDropDown().click();
+		turbinePage.thirdValueOfTurbineDropDown().click();
+		assertTrue(turbinePage.clearall().isDisplayed());
+		turbinePage.clearall().click();
 		turbinePage.turbineDropdown().click();
-		turbineOverviewPage.turbinedatafield().sendKeys("BEL");
-		assertTrue(turbineOverviewPage.noptions().isDisplayed());
-		turbineOverviewPage.eventworkorder().click();
-		assertTrue(turbineOverviewPage.eventworkorderlabel().isDisplayed());
-		turbineOverviewPage.skflink().click();
-		assertTrue(turbineOverviewPage.turbineoverviewlabel().isDisplayed());
+		turbinePage.turbinedatafield().sendKeys("BEL");
+		assertTrue(turbinePage.noptions().isDisplayed());
+		turbinePage.eventworkorder().click();
+		assertTrue(turbinePage.eventworkorderlabel().isDisplayed());
+		turbinePage.skflink().click();
+		assertTrue(turbinePage.turbineoverviewlabel().isDisplayed());
 	}
 
 	@AfterMethod
