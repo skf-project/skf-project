@@ -285,5 +285,42 @@ public class TurbinePage extends Page {
     public WebElement skflink() {
     	return driver.findElement(By.cssSelector("#root > div:nth-child(2) > div.Navigator-module_navigator__1WRTE.undefined > div > ul > li.Navigator-module_logo__1bP1h"));
     }
-
+    
+    public WebElement userTab() {
+    	return driver.findElement(By.cssSelector("div[class='PopOver-module_container__Oe0dQ']"));
+    }
+    
+    public WebElement skfWindLabel() {
+    	return driver.findElement(By.cssSelector("div[class='PopOver-module_container__Oe0dQ']"));
+    }
+    
+    public WebElement userName() {
+    	return driver.findElement(By.cssSelector("p[class='UserPopOver-module_userName__30m51']"));
+    }
+    
+    public WebElement userEmailId() {
+    	return driver.findElement(By.cssSelector("p:nth-child(2)"));
+    }
+    
+    public WebElement eventReportList() {
+    	return driver.findElement(By.cssSelector("ul[class='eventReportItemList_eventReportList__TORqT']"));
+    }
+    
+    public WebElement firstReportFromReportList() {
+    	return driver.findElement(By.cssSelector("aside[id='eventReports'] div:nth-child(1) div:nth-child(2) span:nth-child(1)"));
+    }
+    
+    public String firstReportText() {
+    	String full =  driver.findElement(By.cssSelector("aside[id='eventReports'] div:nth-child(1) div:nth-child(2) span:nth-child(1)")).getText();
+    	String first = full.substring( 0, full.indexOf(","));
+    	return first;
+    }
+    
+    public WebElement reportPopUpHeader() {
+    	return driver.findElement(By.cssSelector("a[class='Modal-module_title__3abYu']"));
+    }
+    
+    public String reportPopUpHeaderText() {
+    	return driver.findElement(By.cssSelector("a[class='Modal-module_title__3abYu']")).getText();
+    }
 }
