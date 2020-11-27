@@ -26,7 +26,8 @@ public class ReportFaultPage extends Page {
 	}
 
 	public WebElement eventDropDownValueNewEvent() {
-		return driver.findElement(By.cssSelector("#react-select-2-option-9"));
+		return driver.findElement(
+				By.xpath("//div[@class=\"react-select__menu-list css-11unzgr\"]/div[contains(text(),\"New event\")]"));
 	}
 
 	public WebElement customerEventIdLabel() {
@@ -146,6 +147,7 @@ public class ReportFaultPage extends Page {
 	public WebElement workOrderRecommendedDropDownValue() {
 		return driver.findElement(By.cssSelector("#react-select-6-option-0"));
 	}
+
 	public WebElement workOrderRecommendedDropDownValue2() {
 		return driver.findElement(By.cssSelector("#react-select-7-option-0"));
 	}
@@ -169,8 +171,7 @@ public class ReportFaultPage extends Page {
 	}
 
 	public WebElement saveButton() {
-		return driver.findElement(
-				By.xpath("//button[contains(text(),\"Save\")]"));
+		return driver.findElement(By.xpath("//button[contains(text(),\"Save\")]"));
 	}
 
 	public WebElement approveButton() {
@@ -181,5 +182,20 @@ public class ReportFaultPage extends Page {
 	public WebElement submitEventButton() {
 		return driver.findElement(By.xpath("//button[contains(text(),\"Submit event\")]"));
 	}
+	
+	public WebElement errorMsgEventCaseReportPositionIsRequired() {
+		return driver.findElement(By.xpath("//div[@class=\"Toast-module_toast__MVT2h Toast-module_danger__3HF4m \"]"));
+	}
+	
+	public WebElement errorMsgEventCaseReportSeverityIsRequired() {
+		return driver.findElement(By.xpath("//*[@class=\" ToastCluster-module_cluster__uNs3D ToastCluster-module_bottom__384-f\"]/div[1]/div[1]"));
+	}
 
+	public WebElement errorMsgEventCaseReportPositionIsRequired1() {
+		return driver.findElement(By.xpath("//*[@class=\" ToastCluster-module_cluster__uNs3D ToastCluster-module_bottom__384-f\"]/div[2]/div[1]"));
+	}
+	
+	public WebElement errorMsgEventCaseReportIndicatedFaultIsRequired() {
+		return driver.findElement(By.xpath("//*[@class=\" ToastCluster-module_cluster__uNs3D ToastCluster-module_bottom__384-f\"]/div[3]/div[1]"));
+	}
 }
