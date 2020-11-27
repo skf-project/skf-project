@@ -292,7 +292,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.windFarmSearchRecordOnMap().isDisplayed());
 	}
 
-	@Test(enabled = false)
+	@Test
 	public void turbineoverview() throws Exception {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
