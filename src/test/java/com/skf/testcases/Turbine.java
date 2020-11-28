@@ -241,7 +241,7 @@ public class Turbine extends Page {
 
 	}
 
-	@Test
+	@Test 
 	public void windFarmFilter3() throws InterruptedException, IOException, AWTException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -366,7 +366,7 @@ public class Turbine extends Page {
 		loginPage.loginApp(config.getProperty("validUsername"),
 				config.getProperty("validPassword"));
 		TurbinePage turbinePage = new TurbinePage();
-		assertTrue(turbinePage.filterLabel().isDisplayed());
+		assertTrue(turbinePage.lastSubmitedEventReportsLabelText().isDisplayed());
 		assertTrue(turbinePage.firstReportFromReportList().isDisplayed());
 		turbinePage.firstReportFromReportList().click();
 		assertTrue(turbinePage.reportPopUpHeader().isDisplayed());
