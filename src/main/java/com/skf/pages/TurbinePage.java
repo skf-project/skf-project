@@ -215,7 +215,16 @@ public class TurbinePage extends Page {
 		return driver.findElement(By
 				.xpath("//*[@class=\"react-select__menu-list css-11unzgr\"]//div[contains(text(),'WO B2 15550821')]"));
 	}
+	public WebElement windFarmSearchRecordVASTurbine() {
+		return driver.findElement(By
+				.xpath("//*[@class=\"react-select__menu-list css-11unzgr\"]//div[contains(text(),\"VAS1 - Turbine\")]"));
+	}
 
+	public WebElement windFarmSearchRecordOnMapVAS1() {
+		return driver.findElement(By.xpath(
+				"//*[@id=\"Map-module_map__utoEh\"]//div[@class=\"FarmChild-module_child__T4JfU\"]/label[contains(text(),'VAS1')]/../div[1]"));
+	}
+	
 	public WebElement windFarmSearchRecordOnMap() {
 		return driver.findElement(By.xpath(
 				"//*[@id=\"Map-module_map__utoEh\"]//div[@class=\"FarmChild-module_child__T4JfU\"]/label[contains(text(),'WO B2 15550821')]/../div[1]"));

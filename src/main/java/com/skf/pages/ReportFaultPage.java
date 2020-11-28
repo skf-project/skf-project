@@ -183,7 +183,7 @@ public class ReportFaultPage extends Page {
 		return driver.findElement(By.xpath("//button[contains(text(),\"Submit event\")]"));
 	}
 	
-	public WebElement errorMsgEventCaseReportPositionIsRequired() {
+	public WebElement errorMsgEventCaseReport() {
 		return driver.findElement(By.xpath("//div[@class=\"Toast-module_toast__MVT2h Toast-module_danger__3HF4m \"]"));
 	}
 	

@@ -19,14 +19,14 @@ import com.skf.pages.ReportFaultPage;
 import com.skf.pages.TurbinePage;
 import com.skf.utilities.CommonUtilities;
 
-public class CancelFlow extends Page {
+public class SaveSubmitEventFlow extends Page {
 
 	String path = System.getProperty("user.dir");
 	public static Properties config = new Properties();
 	public static FileInputStream fisco;
 
 	@Test(enabled = true)
-	public void cancelFlowFuntionality() throws InterruptedException, IOException, AWTException {
+	public void saveEventFuntionality() throws InterruptedException, IOException, AWTException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
@@ -38,12 +38,12 @@ public class CancelFlow extends Page {
 
 		turbinePage.windFarmSearchDropdown().click();
 		turbinePage.windFarmSearchSeeAllSearchResult().click();
-		utilities.javaScriptExecutorType("WO B2 15550821");
-		turbinePage.windFarmSearchRecord().click();
+		utilities.javaScriptExecutorType("VAS1 - Turbine");
+		turbinePage.windFarmSearchRecordVASTurbine().click();
 		Thread.sleep(3000);
-		assertTrue(turbinePage.windFarmSearchRecordOnMap().isDisplayed());
+		assertTrue(turbinePage.windFarmSearchRecordOnMapVAS1().isDisplayed());
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("arguments[0].click()", turbinePage.windFarmSearchRecordOnMap());
+		jse.executeScript("arguments[0].click()", turbinePage.windFarmSearchRecordOnMapVAS1());
 		assertTrue(turbinePage.currentStatusOnHeaderPopUp().isDisplayed());
 		turbinePage.reportFaultButton().click();
 		assertTrue(reportFault.reportHeaderLabel().isDisplayed());
@@ -63,55 +63,28 @@ public class CancelFlow extends Page {
 		reportFault.severityDropDown().click();
 		reportFault.severityDropdownTenthValue().click();
 		reportFault.eventCommentTextBox().sendKeys("Test123$");
-		robot.keyPress(KeyEvent.VK_PAGE_UP);
-		robot.keyPress(KeyEvent.VK_PAGE_UP);
-		Thread.sleep(3000);
-		JavascriptExecutor jsec = (JavascriptExecutor) driver;
-		jsec.executeScript("arguments[0].click()", turbinePage.closeButtonOnHeaderPop());
-		turbinePage.reportFaultButton().click();
-		assertTrue(reportFault.reportHeaderLabel().isDisplayed());
-	}
-
-	@Test(enabled = true)
-	public void saveButtonFuntionalityAndErrorMessage() throws InterruptedException, IOException, AWTException {
-		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
-		config.load(fisco);
-		LoginPage loginPage = new LoginPage();
-		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
-		TurbinePage turbinePage = new TurbinePage();
-		CommonUtilities utilities = new CommonUtilities();
-		ReportFaultPage reportFault = new ReportFaultPage();
-		Robot robot = new Robot();
-
-		turbinePage.windFarmSearchDropdown().click();
-		turbinePage.windFarmSearchSeeAllSearchResult().click();
-		utilities.javaScriptExecutorType("WO B2 15550821");
-		turbinePage.windFarmSearchRecord().click();
-		Thread.sleep(3000);
-		assertTrue(turbinePage.windFarmSearchRecordOnMap().isDisplayed());
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("arguments[0].click()", turbinePage.windFarmSearchRecordOnMap());
-		assertTrue(turbinePage.currentStatusOnHeaderPopUp().isDisplayed());
-		turbinePage.reportFaultButton().click();
-		assertTrue(reportFault.reportHeaderLabel().isDisplayed());
-		reportFault.assetsDropDown().click();
-		reportFault.assetsFirstDropDownValue().click();
-		reportFault.eventDropDown().click();
-		Thread.sleep(3000);
-		utilities.javaScriptExecutorType("New event");
-		reportFault.eventDropDownValueNewEvent().click();
+		reportFault.addButtonLabel().click();
+		reportFault.workOrderDeleteIcon().click();
+		assertTrue(reportFault.workOrderCancelDeleteIcon().isDisplayed());
+		reportFault.workOrderApproveDeleteIcon().click();
+		reportFault.addButtonLabel().click();
+		reportFault.workOrderCustomerIdRadioButton().click();
+		reportFault.workOrderCustomerEventIdTextBox().sendKeys("Event111");
 		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 		Thread.sleep(3000);
+		reportFault.workOrderRecommendedDrodown().click();
+		utilities.javaScriptExecutorType("Check Bearing Clearance");
+		reportFault.workOrderRecommendedDropDownValue2().click();
+		reportFault.workOrderCommentTextBox().sendKeys("Event 123");
 		assertTrue(reportFault.saveButton().isEnabled());
 		reportFault.saveButton().click();
 		assertTrue(reportFault.errorMsgEventCaseReport().isDisplayed());
-		reportFault.errorMsgEventCaseReport().getText()
-				.contains("Event Case Report Position is required");
+		assertTrue(reportFault.errorMsgEventCaseReport().getText().contains("Event Case saved Successfully"));
 
 	}
-
+	
 	@Test(enabled = true)
-	public void submitEventButtonFuntionalityAndErrorMessages() throws InterruptedException, IOException, AWTException {
+	public void submitEventFuntionality() throws InterruptedException, IOException, AWTException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
@@ -123,12 +96,12 @@ public class CancelFlow extends Page {
 
 		turbinePage.windFarmSearchDropdown().click();
 		turbinePage.windFarmSearchSeeAllSearchResult().click();
-		utilities.javaScriptExecutorType("WO B2 15550821");
-		turbinePage.windFarmSearchRecord().click();
+		utilities.javaScriptExecutorType("VAS1 - Turbine");
+		turbinePage.windFarmSearchRecordVASTurbine().click();
 		Thread.sleep(3000);
-		assertTrue(turbinePage.windFarmSearchRecordOnMap().isDisplayed());
+		assertTrue(turbinePage.windFarmSearchRecordOnMapVAS1().isDisplayed());
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("arguments[0].click()", turbinePage.windFarmSearchRecordOnMap());
+		jse.executeScript("arguments[0].click()", turbinePage.windFarmSearchRecordOnMapVAS1());
 		assertTrue(turbinePage.currentStatusOnHeaderPopUp().isDisplayed());
 		turbinePage.reportFaultButton().click();
 		assertTrue(reportFault.reportHeaderLabel().isDisplayed());
@@ -138,21 +111,36 @@ public class CancelFlow extends Page {
 		Thread.sleep(3000);
 		utilities.javaScriptExecutorType("New event");
 		reportFault.eventDropDownValueNewEvent().click();
+		reportFault.customerIdRadioButton().click();
+		robot.keyPress(KeyEvent.VK_TAB);
+		utilities.javaScriptExecutorType("Event123");
+		reportFault.indicatedFaultDropdown().click();
+		reportFault.indicatedFaultDropdownFirstValue().click();
+		reportFault.positionDropdown().click();
+		reportFault.positionDropdownFirstValue().click();
+		reportFault.severityDropDown().click();
+		reportFault.severityDropdownTenthValue().click();
+		reportFault.eventCommentTextBox().sendKeys("Test123$");
+		reportFault.addButtonLabel().click();
+		reportFault.workOrderDeleteIcon().click();
+		assertTrue(reportFault.workOrderCancelDeleteIcon().isDisplayed());
+		reportFault.workOrderApproveDeleteIcon().click();
+		reportFault.addButtonLabel().click();
+		reportFault.workOrderCustomerIdRadioButton().click();
+		reportFault.workOrderCustomerEventIdTextBox().sendKeys("Event111");
 		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 		Thread.sleep(3000);
+		reportFault.workOrderRecommendedDrodown().click();
+		utilities.javaScriptExecutorType("Check Bearing Clearance");
+		reportFault.workOrderRecommendedDropDownValue2().click();
+		reportFault.workOrderCommentTextBox().sendKeys("Event 123");
 		assertTrue(reportFault.saveButton().isEnabled());
 		reportFault.approveButton().click();
+		Thread.sleep(2000);
 		reportFault.submitEventButton().click();
-		assertTrue(reportFault.errorMsgEventCaseReportSeverityIsRequired().isDisplayed());
-		assertTrue(reportFault.errorMsgEventCaseReportIndicatedFaultIsRequired().isDisplayed());
-		assertTrue(reportFault.errorMsgEventCaseReportPositionIsRequired1().isDisplayed());
-		assertTrue(reportFault.errorMsgEventCaseReportPositionIsRequired1().getText()
-				.contains("Event Case Report Position is required"));
-		assertTrue(reportFault.errorMsgEventCaseReportSeverityIsRequired().getText()
-				.contains("Event Case Report Severity is required"));
-		assertTrue(reportFault.errorMsgEventCaseReportIndicatedFaultIsRequired().getText()
-				.contains("Event Case Report Indicated Fault is required"));
-
+		Thread.sleep(15000);
+		assertTrue(reportFault.errorMsgEventCaseReport().isDisplayed());
+		assertTrue(reportFault.errorMsgEventCaseReport().getText().contains("Event Case saved Successfully"));
 	}
 
 	@AfterMethod(enabled = true)
