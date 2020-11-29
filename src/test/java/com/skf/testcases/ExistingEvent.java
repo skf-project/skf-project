@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import com.skf.base.Page;
@@ -69,4 +70,10 @@ public class ExistingEvent extends Page{
 		 assertTrue(reportFaultPage.submitEventButton().isDisplayed());
 		 
   }
+  @AfterMethod
+ 	public void tearDown() {
+ 		Page.driver.close();
+ 		driver=null;
+ 		log.debug("Browser closed");
+ 	}
 }
