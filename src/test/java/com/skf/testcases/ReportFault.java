@@ -1,6 +1,7 @@
 package com.skf.testcases;
 
 import static org.junit.Assert.assertFalse;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.FileInputStream;
@@ -20,9 +21,6 @@ public class ReportFault extends Page {
 	public static Properties config = new Properties();
 	public static FileInputStream fisco;
 	
-  @Test
-  public void f() {
-  }
   
   @Test
   public void verifyTurbinePopUp() throws IOException 
@@ -46,8 +44,8 @@ public class ReportFault extends Page {
 	 assertTrue(turbinePage.previousActionTakenOnHeaderPopUp().isDisplayed());
 	 assertTrue(turbinePage.reportFaultButtonOnHeaderPopUp().isDisplayed());
 	 assertTrue(turbinePage.reportFeedbackButtonOnHeaderPop().isDisplayed());
-	 assertTrue(turbinePage.closeButtonOnHeaderPop().isDisplayed());
-	 turbinePage.closeButtonOnHeaderPop().click();
+	 assertTrue(turbinePage.closeButtonInTurbinePopUp().isDisplayed());
+	 turbinePage.closeButtonInTurbinePopUp().click();
 	 assertFalse(turbinePage.turbineNameOnHeaderPopUp().isDisplayed());
   }
   
@@ -68,6 +66,7 @@ public class ReportFault extends Page {
 		 assertTrue(turbinePage.turbineNameOnHeaderPopUp().isDisplayed());
 		 assertTrue(turbinePage.currentStatusOnHeaderPopUp().isDisplayed());
 		 turbinePage.reportFaultButtonOnHeaderPopUp().click();
+		 assertTrue(reportFaultPage.reportFaultCloseButton().isDisplayed());
 		 assertTrue(reportFaultPage.reportFaultFilterLabel().isDisplayed());
 		 assertTrue(reportFaultPage.reportFaultClearAllLink().isDisplayed());
 		 assertTrue(reportFaultPage.reportFaultRegionFilter().isDisplayed());
@@ -82,9 +81,10 @@ public class ReportFault extends Page {
 		 assertTrue(reportFaultPage.reportFaultTurbineTickMark().isDisplayed());
 		 assertTrue(reportFaultPage.reportFaultAssetFilter().isDisplayed());
 		 reportFaultPage.reportFaultAssetFilter().click();
-		 reportFaultPage.reportFaultAssetFirstValue().click();
-		 assertTrue(reportFaultPage.reportFaultAssetTickMark().isDisplayed());
+		 reportFaultPage.reportFaultAssetFirstValue().click();	 
 		 Thread.sleep(15000);
+		 assertTrue(reportFaultPage.reportFaultAssetTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.eventDropDown().isDisplayed());
 		 assertTrue(reportFaultPage.reportFaultFilterLabel().isDisplayed());
 		 reportFaultPage.reportFaultClearAllLink().click();
 		 assertTrue(reportFaultPage.reportFaultRegionFilter().isDisplayed());
@@ -105,10 +105,53 @@ public class ReportFault extends Page {
 		 reportFaultPage.reportFaultWindFarmFirstValue().click();
 		 assertTrue(reportFaultPage.reportFaultWindFarmTickMark().isDisplayed());
 		 assertTrue(reportFaultPage.reportFaultTurbineFilter().isDisplayed());
+		 reportFaultPage.reportFaultTurbineFilter().click();
+		 reportFaultPage.reportFaultTurbineFirstValue().click();
+		 Thread.sleep(10000);
+		 assertTrue(reportFaultPage.reportFaultTurbineTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultAssetFilter().isDisplayed());
+		 reportFaultPage.reportFaultCloseButton().click();
+		 assertTrue(turbinePage.currentStatusOnHeaderPopUp().isDisplayed());
+  }
+  @Test
+  public void verifyLeftAndRightClick() throws IOException, InterruptedException
+  {
+	  fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		 config.load(fisco);
+		 LoginPage loginPage = new LoginPage();
+		 loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+		 TurbinePage turbinePage =new TurbinePage();
+		 assertTrue(turbinePage.turbineoverviewlabel().isDisplayed());
+		 turbinePage.turbineDropdown().click();
+		 turbinePage.turbinedatafield().sendKeys("WO B2 15550821");
+		 turbinePage.noptions().click();
+		 ReportFaultPage reportFaultPage = new ReportFaultPage();
+		 reportFaultPage.mapTurbine().click();
+		 assertTrue(turbinePage.turbineNameOnHeaderPopUp().isDisplayed());
+		 assertTrue(turbinePage.currentStatusOnHeaderPopUp().isDisplayed());
+		 turbinePage.reportFaultButtonOnHeaderPopUp().click();
+		 assertTrue(reportFaultPage.reportFaultFilterLabel().isDisplayed());
+		 reportFaultPage.reportFaultAssetFilter().click();
+		 reportFaultPage.reportFaultAssetFirstValue().click();
+		 Thread.sleep(15000);
+		 assertTrue(reportFaultPage.reportFaultAssetTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.eventTable().isDisplayed());
+		 assertEquals("Date",reportFaultPage.eventTableDateHeader().getText());
+		 assertEquals("Indicated fault",reportFaultPage.eventTableIndicatedFaultHeader().getText());
+		 assertEquals("Event",reportFaultPage.eventTableEventHeader().getText());
+		 assertTrue(reportFaultPage.eventDropDown().isDisplayed());
+		 reportFaultPage.leftSignOnReportFault().click();
+		 assertFalse(reportFaultPage.reportFaultFilterLabel().isDisplayed());
+		 reportFaultPage.leftSignOnReportFault().click();
+		 assertTrue(reportFaultPage.reportFaultFilterLabel().isDisplayed());
+		 reportFaultPage.rightSignOnReportFault().click();
+		 assertFalse(reportFaultPage.eventDropDown().isDisplayed()); 
+		 reportFaultPage.rightSignOnReportFault().click();
+		 assertTrue(reportFaultPage.eventDropDown().isDisplayed());
 		 
   }
   
-  @AfterMethod
+    @AfterMethod
 	public void tearDown() {
 		Page.driver.close();
 		driver=null;
