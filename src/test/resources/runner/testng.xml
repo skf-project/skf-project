@@ -23,6 +23,7 @@
 		<test name="Event">
 		<classes>
 			<class name="com.skf.testcases.EventSection" />
+			<class name="com.skf.testcases.CancelFlow" />
 		</classes>
 	</test> <!-- Test -->
 	

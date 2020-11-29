@@ -1,5 +1,6 @@
 package com.skf.testcases;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.awt.AWTException;
@@ -46,7 +47,7 @@ public class Turbine extends Page {
 		turbinePage.signOut().click();
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void countryFilterFuntionality() throws InterruptedException, IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -71,7 +72,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.countryTickMark().isEnabled());
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void countryFilterTypingFuntionality() throws InterruptedException, IOException, AWTException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -87,7 +88,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.countryNoOptionDropdownValue().isDisplayed());
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void ownerFilterFuntionality() throws InterruptedException, IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -112,7 +113,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.ownerTickMark().isEnabled());
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void ownerFilterTypingFuntionality() throws InterruptedException, IOException, AWTException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -128,7 +129,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.countryNoOptionDropdownValue().isDisplayed());
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void turbineOverviewUI() throws IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -146,7 +147,7 @@ public class Turbine extends Page {
 
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void regionalFilter1() throws IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -161,7 +162,7 @@ public class Turbine extends Page {
 
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void regionalFilter2() throws IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -180,7 +181,7 @@ public class Turbine extends Page {
 		turbinePage.regionDropdownEUOption().click();
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void regionalFilter3() throws InterruptedException, IOException, AWTException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -199,7 +200,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.regionNoOptionDropdownValue().isDisplayed());
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void windFarmFilter1() throws IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -216,7 +217,7 @@ public class Turbine extends Page {
 
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void windFarmFilter2() throws InterruptedException, IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -240,7 +241,7 @@ public class Turbine extends Page {
 
 	}
 
-	@Test(enabled = true)
+	@Test 
 	public void windFarmFilter3() throws InterruptedException, IOException, AWTException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -259,7 +260,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.windFarmNoOptionDropdownValue().isDisplayed());
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void windFarmFilter4() throws InterruptedException, IOException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -276,7 +277,7 @@ public class Turbine extends Page {
 
 	}
 
-	@Test(enabled = true)
+	@Test
 	public void searchWindFarm() throws InterruptedException, IOException, AWTException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -292,7 +293,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.windFarmSearchRecordOnMap().isDisplayed());
 	}
 
-	@Test(enabled = false)
+	@Test
 	public void turbineoverview() throws Exception {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -321,6 +322,56 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.eventworkorderlabel().isDisplayed());
 		turbinePage.skflink().click();
 		assertTrue(turbinePage.turbineoverviewlabel().isDisplayed());
+	}
+	
+	@Test 
+	public void logout() throws IOException {
+
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+		TurbinePage turbinePage = new TurbinePage();
+		assertTrue(turbinePage.filterLabel().isDisplayed());
+		turbinePage.user().click();
+		assertTrue(turbinePage.userTab().isDisplayed());
+		assertTrue(turbinePage.skfWindLabel().isDisplayed());
+		assertTrue(turbinePage.signOut().isDisplayed());
+		assertTrue(turbinePage.userName().isDisplayed());
+		assertTrue(turbinePage.userEmailId().isDisplayed());
+		turbinePage.signOut().click();
+		assertEquals(driver.getCurrentUrl(),config.getProperty("loginPageUrl"));
+	}
+	
+	@Test
+	public void lastSubmitedEventReports() throws IOException {
+
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+		TurbinePage turbinePage = new TurbinePage();
+		assertTrue(turbinePage.lastSubmitedEventReportsLabelText().isDisplayed());
+		turbinePage.turbineDropdown().click();
+		assertTrue(turbinePage.firstValueOfTurbineDropDown().isDisplayed());
+		turbinePage.firstValueOfTurbineDropDown().click();
+		assertTrue(turbinePage.eventReportList().isDisplayed());
+	}
+	
+	@Test 
+	public void lastSubmitedEventReports2() throws IOException, InterruptedException {
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginApp(config.getProperty("validUsername"),
+				config.getProperty("validPassword"));
+		TurbinePage turbinePage = new TurbinePage();
+		assertTrue(turbinePage.lastSubmitedEventReportsLabelText().isDisplayed());
+		assertTrue(turbinePage.firstReportFromReportList().isDisplayed());
+		turbinePage.firstReportFromReportList().click();
+		assertTrue(turbinePage.reportPopUpHeader().isDisplayed());
+		assertTrue(turbinePage.reportPopUpHeaderText().contains(turbinePage.firstReportText()));
+		
 	}
 
 	@AfterMethod

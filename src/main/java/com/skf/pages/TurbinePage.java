@@ -64,7 +64,8 @@ public class TurbinePage extends Page {
 	}
 
 	public WebElement closeButtonOnHeaderPop() {
-		return driver.findElement(By.xpath("//a[@class='Modal-module_close__gwtTs']"));
+		return driver.findElement(By.xpath(
+				"//*[@class=\"Modal-module_background__oWywV\"]//div[1]/a[@class=\"Modal-module_close__gwtTs\"]"));
 	}
 
 	public WebElement user() {
@@ -124,16 +125,17 @@ public class TurbinePage extends Page {
 		return driver.findElement(By.cssSelector(
 				"#filtersSideBar > div > div > div.Filter-module_filterSelectors__23t1h > div:nth-child(3) > div.IconCheck-module_iconCheck__39ORN.IconCheck-module_iconCheck--circled__1_WLU.SelectInputMultiple-module_iconSelected__MKAgb"));
 	}
-	
+
 	public WebElement searchWindFarmTextBox() {
-		return driver.findElement(By.cssSelector("#windFarms > div.TurbineOverview_search__13wq7 > div > div > div > div.react-select__value-container.css-1hwfws3"));
+		return driver.findElement(By.cssSelector(
+				"#windFarms > div.TurbineOverview_search__13wq7 > div > div > div > div.react-select__value-container.css-1hwfws3"));
 	}
-	
+
 	public WebElement openEventLabelText() {
 		return driver.findElement(
 				By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[2]/div/div/section[1]/div/div[1]/div/label"));
 	}
-	
+
 	public WebElement workOrdersLabelText() {
 		return driver.findElement(
 				By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[2]/div/div/section[1]/div/div[2]/div/label"));
@@ -143,151 +145,188 @@ public class TurbinePage extends Page {
 		return driver.findElement(
 				By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[2]/div/div/section[1]/div/div[3]/div/label"));
 	}
-	
+
 	public WebElement filtersLabelText() {
-		return driver.findElement(
-				By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[1]/b"));
+		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[1]/b"));
 	}
-	
+
 	public WebElement searchLabelText() {
-		return driver.findElement(
-				By.xpath("//*[@id=\"windFarms\"]/div[1]/span"));
+		return driver.findElement(By.xpath("//*[@id=\"windFarms\"]/div[1]/span"));
 	}
-	
+
 	public WebElement lastSubmitedEventReportsLabelText() {
-		return driver.findElement(
-				By.xpath("//*[@id=\"eventReports\"]/span"));
+		return driver.findElement(By.xpath("//*[@id=\"eventReports\"]/span"));
 	}
-	
+
 	public WebElement windFarmMapLabelText() {
-		return driver.findElement(
-				By.xpath("//*[@id=\"windFarms\"]/span"));
+		return driver.findElement(By.xpath("//*[@id=\"windFarms\"]/span"));
 	}
-	
-	public WebElement regionDropdownFilter()
-	{
+
+	public WebElement regionDropdownFilter() {
 		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[1]/div[1]/div"));
 	}
-	
-	public WebElement regionDropdownEUOption()
-	{
+
+	public WebElement regionDropdownEUOption() {
 		return driver.findElement(By.cssSelector("#react-select-3-option-0"));
 	}
-	
-	public WebElement regiontickMark()
-	{
+
+	public WebElement regiontickMark() {
 		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[1]/div[2]/div"));
 	}
-		
+
 	public WebElement regionNoOptionDropdownValue() {
-		return driver.findElement(
-				By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[1]/div/div[2]/div/div"));
+		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[1]/div/div[2]/div/div"));
 	}
-	
-	public WebElement windFarmDropdownFilter()
-	{
+
+	public WebElement windFarmDropdownFilter() {
 		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[4]/div/div/div[1]"));
 	}
-	
-	public WebElement windFarmDropdownClerimoisOption()
-	{
+
+	public WebElement windFarmDropdownClerimoisOption() {
 		return driver.findElement(By.cssSelector("#react-select-6-option-7"));
 	}
-	
+
 	public WebElement windFarmSelectAllDropdownOption() {
 		return driver.findElement(By.cssSelector("#react-select-6-option-0"));
 	}
-	
-	public WebElement windFarmtickMark()
-	{
+
+	public WebElement windFarmtickMark() {
 		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[4]/div[2]"));
 	}
-		
+
 	public WebElement windFarmNoOptionDropdownValue() {
-		return driver.findElement(
-				By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[4]/div/div[2]/div/div"));
+		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[4]/div/div[2]/div/div"));
 	}
-	
+
 	public WebElement windFarmSelectFirstValueArtois() {
 		return driver.findElement(By.cssSelector("#react-select-6-option-1"));
 	}
-	
+
 	public WebElement windFarmSelectFifthValueCalmont() {
 		return driver.findElement(By.cssSelector("#react-select-6-option-5"));
 	}
-	
+
 	public WebElement windFarmSearchDropdown() {
-		return driver.findElement(By.xpath("//*[@id=\"windFarms\"]//div[@class=\"react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer\"]"));
+		return driver.findElement(By.xpath(
+				"//*[@id=\"windFarms\"]//div[@class=\"react-select__indicator react-select__dropdown-indicator css-tlfecz-indicatorContainer\"]"));
 	}
-	
+
 	public WebElement windFarmSearchRecord() {
-		return driver.findElement(By.xpath("//*[@class=\"react-select__menu-list css-11unzgr\"]//div[contains(text(),'WO B2 15550821')]"));
+		return driver.findElement(By
+				.xpath("//*[@class=\"react-select__menu-list css-11unzgr\"]//div[contains(text(),'WO B2 15550821')]"));
+	}
+	public WebElement windFarmSearchRecordVASTurbine() {
+		return driver.findElement(By
+				.xpath("//*[@class=\"react-select__menu-list css-11unzgr\"]//div[contains(text(),\"VAS1 - Turbine\")]"));
+	}
+
+	public WebElement windFarmSearchRecordOnMapVAS1() {
+		return driver.findElement(By.xpath(
+				"//*[@id=\"Map-module_map__utoEh\"]//div[@class=\"FarmChild-module_child__T4JfU\"]/label[contains(text(),'VAS1')]/../div[1]"));
 	}
 	
 	public WebElement windFarmSearchRecordOnMap() {
-		return driver.findElement(By.xpath("//*[@id=\"Map-module_map__utoEh\"]//div[@class=\"FarmChild-module_child__T4JfU\"]/label[contains(text(),'WO B2 15550821')]/../div[1]"));
+		return driver.findElement(By.xpath(
+				"//*[@id=\"Map-module_map__utoEh\"]//div[@class=\"FarmChild-module_child__T4JfU\"]/label[contains(text(),'WO B2 15550821')]/../div[1]"));
 	}
-	
+
 	public WebElement windFarmSearchSeeAllSearchResult() {
 		return driver.findElement(By.xpath("//*[@id=\"windFarms\"]//span[contains(text(),'See all search results')]"));
 	}
-	
-	public WebElement turbineoverviewlabel()
-	{
-		return driver.findElement(By.xpath("//div[@class='Breadcrumb-module_breadcrumb__2Mkgj']//a[contains(text(),'Turbine overview')]"));
+
+	public WebElement turbineoverviewlabel() {
+		return driver.findElement(By
+				.xpath("//div[@class='Breadcrumb-module_breadcrumb__2Mkgj']//a[contains(text(),'Turbine overview')]"));
 	}
-	
 
 	public WebElement secondValueOfTurbineDropDown() {
 		return driver.findElement(By.cssSelector("#react-select-7-option-1"));
 
 	}
+
 	public WebElement thirdValueOfTurbineDropDown() {
 		return driver.findElement(By.cssSelector("#react-select-7-option-2"));
 
 	}
+
 	public WebElement clearall() {
 		return driver.findElement(By.xpath("//span[@Class='Filter-module_clear__gbgFq']"));
 	}
-	
-    public WebElement tick()
-    {
-    	return driver.findElement(By.xpath("//*[@id=\"react-select-7-option-1\"]/div"));
-    }
-    public boolean isclearallpresent()
-    {
-    	try {
-    		clearall();
-    		return true;
-    	}
-    	catch(org.openqa.selenium.NoSuchElementException e) {
-    		return false;
-    	}
-    }
-    public WebElement noptions() {
-		
-    	return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[5]/div/div[2]/div/div"));
-    	
-    }
-    public WebElement turbinedatafield() {
-		return driver.findElement(By.xpath("//*[@id=\"react-select-7-input\"]"));
-    	
-    }
-    public WebElement eventworkorder(){
-		return driver.findElement(By.xpath("//li[5]"));
-    	
-    }
-    
-    public WebElement eventworkorderlabel() {
-    	return driver.findElement(By.xpath("//div[@class='Breadcrumb-module_breadcrumb__2Mkgj']//a[contains(text(),'Event & Work Orders')]"));
-    }
-    
-    public WebElement skflink() {
-    	return driver.findElement(By.cssSelector("#root > div:nth-child(2) > div.Navigator-module_navigator__1WRTE.undefined > div > ul > li.Navigator-module_logo__1bP1h"));
-    }
-    
-    public WebElement reportFaultButton() {
-    	return driver.findElement(By.xpath("//*[@id=\"root\"]//button[contains(text(),'Report fault')]"));
-    }
 
+	public WebElement tick() {
+		return driver.findElement(By.xpath("//*[@id=\"react-select-7-option-1\"]/div"));
+	}
+
+	public boolean isclearallpresent() {
+		try {
+			clearall();
+			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+		}
+	}
+
+	public WebElement noptions() {
+
+		return driver.findElement(By.xpath("//*[@id=\"filtersSideBar\"]/div/div/div[2]/div[5]/div/div[2]/div/div"));
+
+	}
+
+	public WebElement turbinedatafield() {
+		return driver.findElement(By.xpath("//*[@id=\"react-select-7-input\"]"));
+
+	}
+
+	public WebElement eventworkorder() {
+		return driver.findElement(By.xpath("//li[5]"));
+
+	}
+
+	public WebElement eventworkorderlabel() {
+		return driver.findElement(By.xpath("//div[@class='Breadcrumb-module_breadcrumb__2Mkgj']//a[contains(text(),'Event & Work Orders')]"));
+	}
+
+	public WebElement skflink() {
+		return driver.findElement(By.cssSelector("#root > div:nth-child(2) > div.Navigator-module_navigator__1WRTE.undefined > div > ul > li.Navigator-module_logo__1bP1h"));
+	}
+	public WebElement userTab() {
+		return driver.findElement(By.cssSelector("div[class='PopOver-module_container__Oe0dQ']"));
+	}
+	public WebElement skfWindLabel() {
+		return driver.findElement(By.cssSelector("div[class='PopOver-module_container__Oe0dQ']"));
+	}
+
+	public WebElement userName() {
+		return driver.findElement(By.cssSelector("p[class='UserPopOver-module_userName__30m51']"));
+	}
+
+	public WebElement userEmailId() {
+		return driver.findElement(By.cssSelector("p:nth-child(2)"));
+	}
+
+	public WebElement eventReportList() {
+		return driver.findElement(By.cssSelector("ul[class='eventReportItemList_eventReportList__TORqT']"));
+	}
+	public WebElement reportFaultButton() {
+		return driver.findElement(By.xpath("//*[@id=\"root\"]//button[contains(text(),'Report fault')]"));
+	}
+	public WebElement firstReportFromReportList() {
+		return driver.findElement(By.cssSelector("aside[id='eventReports'] div:nth-child(1) div:nth-child(2) span:nth-child(1)"));
+	}
+
+	public String firstReportText() {
+		String full =  driver.findElement(By.cssSelector("aside[id='eventReports'] div:nth-child(1) div:nth-child(2) span:nth-child(1)")).getText();
+		String first = full.substring( 0, full.indexOf(","));
+		System.out.println(first);
+		return first;
+	}
+
+	public WebElement reportPopUpHeader() {
+		return driver.findElement(By.cssSelector("a[class='Modal-module_title__3abYu']"));
+	}
+
+	public String reportPopUpHeaderText() {
+		System.out.println(driver.findElement(By.cssSelector("a[class='Modal-module_title__3abYu']")).getText());
+		return driver.findElement(By.cssSelector("a[class='Modal-module_title__3abYu']")).getText();
+	}
 }
