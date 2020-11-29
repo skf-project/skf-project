@@ -108,10 +108,10 @@ public class ReportFault extends Page {
 		 
   }
   
-  /*@AfterMethod
+  @AfterMethod
 	public void tearDown() {
 		Page.driver.close();
 		driver=null;
 		log.debug("Browser closed");
-	}*/
+	}
 }
