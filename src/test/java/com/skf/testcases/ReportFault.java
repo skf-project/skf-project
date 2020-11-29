@@ -1,12 +1,19 @@
 package com.skf.testcases;
 
+import static org.junit.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import com.skf.base.Page;
+import com.skf.pages.LoginPage;
+import com.skf.pages.ReportFaultPage;
+import com.skf.pages.TurbinePage;
 
 public class ReportFault extends Page {
 	String path = System.getProperty("user.dir");
@@ -15,6 +22,90 @@ public class ReportFault extends Page {
 	
   @Test
   public void f() {
+  }
+  
+  @Test
+  public void verifyTurbinePopUp() throws IOException 
+  {
+	  fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+	 config.load(fisco);
+	 LoginPage loginPage = new LoginPage();
+	 loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+	 TurbinePage turbinePage =new TurbinePage();
+	 assertTrue(turbinePage.turbineoverviewlabel().isDisplayed());
+	 turbinePage.turbineDropdown().click();
+	 turbinePage.turbinedatafield().sendKeys("WO B2 15550821");
+	 turbinePage.noptions().click();
+	 ReportFaultPage reportFaultPage = new ReportFaultPage();
+	 reportFaultPage.mapTurbine().click();
+	 assertTrue(turbinePage.turbineNameOnHeaderPopUp().isDisplayed());
+	 System.out.println(turbinePage.turbineNameOnHeaderPopUp().getText());
+	 assertTrue(turbinePage.currentStatusOnHeaderPopUp().isDisplayed());
+	 assertTrue(turbinePage.nextPlannedActionOnHeaderPopUp().isDisplayed());
+	 assertTrue(turbinePage.indicatedFaultOnHeaderPopUp().isDisplayed());
+	 assertTrue(turbinePage.previousActionTakenOnHeaderPopUp().isDisplayed());
+	 assertTrue(turbinePage.reportFaultButtonOnHeaderPopUp().isDisplayed());
+	 assertTrue(turbinePage.reportFeedbackButtonOnHeaderPop().isDisplayed());
+	 assertTrue(turbinePage.closeButtonOnHeaderPop().isDisplayed());
+	 turbinePage.closeButtonOnHeaderPop().click();
+	 assertFalse(turbinePage.turbineNameOnHeaderPopUp().isDisplayed());
+  }
+  
+  @Test
+  public void verifyReportFaultPopUp() throws IOException, InterruptedException 
+  {
+	     fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		 config.load(fisco);
+		 LoginPage loginPage = new LoginPage();
+		 loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+		 TurbinePage turbinePage =new TurbinePage();
+		 assertTrue(turbinePage.turbineoverviewlabel().isDisplayed());
+		 turbinePage.turbineDropdown().click();
+		 turbinePage.turbinedatafield().sendKeys("WO B2 15550821");
+		 turbinePage.noptions().click();
+		 ReportFaultPage reportFaultPage = new ReportFaultPage();
+		 reportFaultPage.mapTurbine().click();
+		 assertTrue(turbinePage.turbineNameOnHeaderPopUp().isDisplayed());
+		 assertTrue(turbinePage.currentStatusOnHeaderPopUp().isDisplayed());
+		 turbinePage.reportFaultButtonOnHeaderPopUp().click();
+		 assertTrue(reportFaultPage.reportFaultFilterLabel().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultClearAllLink().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultRegionFilter().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultRegionTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultCountryFilter().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultCountryTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultOwnerFilter().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultOwnerTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultWindFarmFilter().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultWindFarmTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultTurbineFilter().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultTurbineTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultAssetFilter().isDisplayed());
+		 reportFaultPage.reportFaultAssetFilter().click();
+		 reportFaultPage.reportFaultAssetFirstValue().click();
+		 assertTrue(reportFaultPage.reportFaultAssetTickMark().isDisplayed());
+		 Thread.sleep(15000);
+		 assertTrue(reportFaultPage.reportFaultFilterLabel().isDisplayed());
+		 reportFaultPage.reportFaultClearAllLink().click();
+		 assertTrue(reportFaultPage.reportFaultRegionFilter().isDisplayed());
+		 reportFaultPage.countryFilterNotPresent();
+		 reportFaultPage.reportFaultRegionFilter().click();
+		 reportFaultPage.reportFaultRegionFirstValue().click();
+		 assertTrue(reportFaultPage.reportFaultRegionTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultCountryFilter().isDisplayed());
+		 reportFaultPage.reportFaultCountryFilter().click();
+		 reportFaultPage.reportFaultCountryFirstValue().click();
+		 assertTrue(reportFaultPage.reportFaultCountryTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultOwnerFilter().isDisplayed());
+		 reportFaultPage.reportFaultOwnerFilter().click();
+		 reportFaultPage.reportFaultOwnerFirstValue().click();
+		 assertTrue(reportFaultPage.reportFaultOwnerTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultWindFarmFilter().isDisplayed());
+		 reportFaultPage.reportFaultWindFarmFilter().click();
+		 reportFaultPage.reportFaultWindFarmFirstValue().click();
+		 assertTrue(reportFaultPage.reportFaultWindFarmTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.reportFaultTurbineFilter().isDisplayed());
+		 
   }
   
   @AfterMethod

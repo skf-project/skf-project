@@ -64,6 +64,105 @@ public class ReportFaultPage extends Page {
 		return driver.findElement(By.xpath("//div[contains(text(),\"Approved\")]"));
 	}
 
+	public WebElement mapTurbine() {
+		 return driver.findElement(By.xpath("//*[@id=\"Map-module_map__utoEh\"]/div/div/div[1]/div[3]/div/div[3]/div[2]/div/div"));
+	}
+	public WebElement reportFaultTurbineNameHeaderPopUp()
+	{
+		return driver.findElement(By.xpath("div[class='Modal-module_modal__3brV3 Modal-module_fullscreen__a107r ReportCommonModal_modal__3buIO'] a[class='Modal-module_title__3abYu']"));
+	}
+	public WebElement reportFaultClearAllLink() {
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[1]/span"));
+	}
+	
+	public WebElement reportFaultFilterLabel()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[1]/b"));
+	}
+	public WebElement reportFaultRegionFilter() {
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[1]/div[1]/div"));
+	}
+	public WebElement reportFaultRegionFirstValue() 
+	{
+		return driver.findElement(By.xpath("//*[@id=\"react-select-8-option-0\"]"));
+	}
+	public WebElement reportFaultRegionTickMark()
+	{
+		return driver.findElement(By.xpath("//body/div[@id='root']/div/main/div/div/div/div/div/div/div/section/div/div/div/div/div[1]/div[2]"));
+	}
+	public WebElement reportFaultCountryFilter() {
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[2]/div[1]/div"));
+	}
+	public WebElement reportFaultCountryFirstValue()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"react-select-9-option-1\"]"));
+	}
+	public WebElement reportFaultCountryTickMark() 
+	{
+		return driver.findElement(By.xpath("//body/div[@id='root']/div/main/div/div/div/div/div/div/div/section/div/div/div/div/div[2]/div[2]"));
+	}
+	public WebElement reportFaultOwnerFilter()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[3]/div[1]/div"));
+	}
+	public WebElement reportFaultOwnerFirstValue()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"react-select-10-option-0\"]"));
+	}
+	public WebElement reportFaultOwnerTickMark()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[3]/div[2]"));
+	}
+	public WebElement reportFaultWindFarmFilter()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[4]/div[1]/div"));
+	}
+	public WebElement reportFaultWindFarmFirstValue()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"react-select-11-option-0\"]"));
+	}
+	public WebElement reportFaultWindFarmTickMark()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[4]/div[2]"));
+	}
+	
+	public WebElement reportFaultTurbineFilter()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[5]/div[1]/div"));
+	}
+	public WebElement reportFaultTurbineFirstValue()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"react-select-12-option-0\"]"));
+	}
+	public WebElement reportFaultTurbineTickMark()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[5]/div[2]"));
+	}
+	
+	public WebElement reportFaultAssetFilter()
+	{
+		return driver.findElement(By.xpath("//body/div[@id='root']/div/main/div/div/div/div/div/div/div/section/div/div/div/div/div[6]/div[1]/div[1]"));
+	}
+	public WebElement reportFaultAssetFirstValue() {
+		return driver.findElement(By.xpath("//*[@id=\"react-select-13-option-0\"]"));
+	}
+	public WebElement reportFaultAssetTickMark() {
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[6]/div[2]"));
+	}
+	public WebElement reportFaultAssetTextBox() {
+		return driver.findElement(By.xpath("//div[@class='ReportCommonModal_contentSection__2vkAq']//div//div[@class='']//div[@class='Filter-module_filterSelectors__23t1h']//div//div[@class='react-select__value-container css-1hwfws3']//div[@class='react-select__input']"));
+	}
+	 public boolean countryFilterNotPresent()
+	    {
+	    	try {
+	    		reportFaultCountryFilter();
+	    		return true;
+	    	}
+	    	catch(org.openqa.selenium.NoSuchElementException e) {
+	    		return false;
+	    	}
+	    }
+
 	public WebElement customerIdRadioButton() {
 		return driver.findElement(By.xpath(
 				"//div[@class=\"ReportFaultModalRightSide_contentWithLabel__QGWRA\"]/div[@class=\"Checkbox-module_checkbox__3us_x \"]/div[1]"));
