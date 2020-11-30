@@ -151,7 +151,7 @@ public class ReportFault extends Page {
 		 
   }
   
-    @AfterMethod(enabled=false)
+    @AfterMethod()
 	public void tearDown() {
 		Page.driver.close();
 		driver=null;
