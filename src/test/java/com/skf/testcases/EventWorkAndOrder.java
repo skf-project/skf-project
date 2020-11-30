@@ -86,7 +86,7 @@ public class EventWorkAndOrder extends Page {
 		assertTrue(eventWorkAndOrderPage.DatePicker().isDisplayed());
 	}
 
-	@AfterMethod (enabled =false)
+	@AfterMethod 
 	public void tearDown() {
 		Page.driver.close();
 		driver = null;
