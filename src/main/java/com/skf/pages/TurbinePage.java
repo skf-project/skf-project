@@ -329,4 +329,8 @@ public class TurbinePage extends Page {
 		System.out.println(driver.findElement(By.cssSelector("a[class='Modal-module_title__3abYu']")).getText());
 		return driver.findElement(By.cssSelector("a[class='Modal-module_title__3abYu']")).getText();
 	}
+	public WebElement closeButtonInTurbinePopUp()
+	{
+		return driver.findElement(By.xpath("//a[@class='Modal-module_close__gwtTs']"));
+	}
 }

@@ -67,6 +67,10 @@ public class ReportFaultPage extends Page {
 	public WebElement mapTurbine() {
 		 return driver.findElement(By.xpath("//*[@id=\"Map-module_map__utoEh\"]/div/div/div[1]/div[3]/div/div[3]/div[2]/div/div"));
 	}
+	public WebElement reportFaultCloseButton()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[1]/a[2]"));
+	}
 	public WebElement reportFaultTurbineNameHeaderPopUp()
 	{
 		return driver.findElement(By.xpath("div[class='Modal-module_modal__3brV3 Modal-module_fullscreen__a107r ReportCommonModal_modal__3buIO'] a[class='Modal-module_title__3abYu']"));
@@ -95,7 +99,7 @@ public class ReportFaultPage extends Page {
 	}
 	public WebElement reportFaultCountryFirstValue()
 	{
-		return driver.findElement(By.xpath("//*[@id=\"react-select-9-option-1\"]"));
+		return driver.findElement(By.xpath("//div[@class=\"react-select__menu-list css-11unzgr\"]/div[1]"));
 	}
 	public WebElement reportFaultCountryTickMark() 
 	{
@@ -107,7 +111,7 @@ public class ReportFaultPage extends Page {
 	}
 	public WebElement reportFaultOwnerFirstValue()
 	{
-		return driver.findElement(By.xpath("//*[@id=\"react-select-10-option-0\"]"));
+		return driver.findElement(By.xpath("//div[@class=\"react-select__menu-list css-11unzgr\"]/div[1]"));
 	}
 	public WebElement reportFaultOwnerTickMark()
 	{
@@ -119,7 +123,7 @@ public class ReportFaultPage extends Page {
 	}
 	public WebElement reportFaultWindFarmFirstValue()
 	{
-		return driver.findElement(By.xpath("//*[@id=\"react-select-11-option-0\"]"));
+		return driver.findElement(By.xpath("//div[@class=\"react-select__menu-list css-11unzgr\"]/div[1]"));
 	}
 	public WebElement reportFaultWindFarmTickMark()
 	{
@@ -132,7 +136,7 @@ public class ReportFaultPage extends Page {
 	}
 	public WebElement reportFaultTurbineFirstValue()
 	{
-		return driver.findElement(By.xpath("//*[@id=\"react-select-12-option-0\"]"));
+		return driver.findElement(By.xpath("//div[@Class=\"react-select__menu-list css-11unzgr\"]/div[1]"));
 	}
 	public WebElement reportFaultTurbineTickMark()
 	{
@@ -143,13 +147,16 @@ public class ReportFaultPage extends Page {
 	{
 		return driver.findElement(By.xpath("//body/div[@id='root']/div/main/div/div/div/div/div/div/div/section/div/div/div/div/div[6]/div[1]/div[1]"));
 	}
-	public WebElement reportFaultAssetFirstValue() {
+	public WebElement reportFaultAssetFirstValue() 
+	{
 		return driver.findElement(By.xpath("//*[@id=\"react-select-13-option-0\"]"));
 	}
-	public WebElement reportFaultAssetTickMark() {
+	public WebElement reportFaultAssetTickMark() 
+	{
 		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[6]/div[2]"));
 	}
-	public WebElement reportFaultAssetTextBox() {
+	public WebElement reportFaultAssetTextBox() 
+	{
 		return driver.findElement(By.xpath("//div[@class='ReportCommonModal_contentSection__2vkAq']//div//div[@class='']//div[@class='Filter-module_filterSelectors__23t1h']//div//div[@class='react-select__value-container css-1hwfws3']//div[@class='react-select__input']"));
 	}
 	 public boolean countryFilterNotPresent()
@@ -200,6 +207,10 @@ public class ReportFaultPage extends Page {
 		return driver.findElement(By.cssSelector("#react-select-5-option-9"));
 	}
 
+	public WebElement severityDropdownFirstValue() {
+		return driver.findElement(By.cssSelector("#react-select-5-option-0"));
+	}
+	
 	public WebElement eventCommentTextBox() {
 		return driver.findElement(By.cssSelector(".TextArea-module_textarea__3iKgr"));
 	}
@@ -296,5 +307,83 @@ public class ReportFaultPage extends Page {
 	
 	public WebElement errorMsgEventCaseReportIndicatedFaultIsRequired() {
 		return driver.findElement(By.xpath("//*[@class=\" ToastCluster-module_cluster__uNs3D ToastCluster-module_bottom__384-f\"]/div[3]/div[1]"));
+	}
+	public WebElement leftSignOnReportFault() {
+		return driver.findElement(By.xpath("//section[contains(@class,'ReportCommonModal_side__3XyYr ReportCommonModal_leftSide__1L6tk')]//div[@class='ReportCommonModal_hideSection___ZL05']"));
+		
+	}
+	public WebElement rightSignOnReportFault()
+	{
+		return driver.findElement(By.xpath("//section[contains(@class,'ReportCommonModal_side__3XyYr ReportCommonModal_rightSide__11K4N')]//div[@class='ReportCommonModal_hideSection___ZL05']"));
+	}
+	public WebElement eventTable()
+	{
+		return driver.findElement(By.xpath("//table[@role='table']"));
+	}
+	public WebElement eventTableDateHeader()
+	{
+		return driver.findElement(By.xpath("//table//tr/th[1]"));
+	}
+	public WebElement eventTableIndicatedFaultHeader()
+	{
+		return driver.findElement(By.xpath("//table//tr/th[2]"));
+	}
+	public WebElement eventTableEventHeader()
+	{
+		return driver.findElement(By.xpath("//table//tr/th[3]"));
+	}
+	
+	public WebElement eventDropDownFirstValue()
+	{
+		return driver.findElement(By.xpath("/html/body/div/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[3]/div[2]/div/div/div/div[2]/div/div"));
+	}
+	public WebElement descriptionLabel()
+	{
+		return driver.findElement(By.xpath("//b[contains(text(),\"Description\")]"));
+	}
+	public WebElement imagesLabel()
+	{
+		return driver.findElement(By.xpath("//b[contains(text(),\"Images\")]"));
+	}
+	public WebElement productavailabilityLabel()
+	{
+		return driver.findElement(By.xpath("//b[contains(text(),\"Product availability\")]"));
+	}
+	public WebElement NoDatesAreAvailableLabel()
+	{
+		return driver.findElement(By.xpath("//label[contains(text(),\"No dates are available\")]"));
+		
+	}
+	public WebElement uploadImageButton() 
+	{
+		return driver.findElement(By.xpath("//div[contains(@class,'file-drop-target')]//button[contains(@class,'')]"));
+		
+	}
+	public WebElement descriptionTextBox()
+	{
+		return driver.findElement(By.xpath("//textarea[contains(@class,'TextArea-module_textarea__3iKgr TextArea-module_disabled__1IJEu')]"));
+	}
+	public WebElement reportFaultPositionValue()
+	{
+		return driver.findElement(By.cssSelector(".ReportFaultModalRightSide_twoColumns6040__O5wS9 > div:nth-of-type(1) > .SelectInput-module_selectInput__UIzeo.css-2b097c-container > .css-yk16xz-control.react-select__control > .css-1hwfws3.react-select__value-container.react-select__value-container--has-value > .css-1wa3eu0-placeholder.react-select__placeholder"));
+	}
+	
+	public WebElement reportFaultIndicatedFaultValue()
+	{
+		return driver.findElement(By.cssSelector(".ReportFaultModal_contentSection__3G4ZN > div:nth-of-type(2) > .SelectInput-module_selectInput__UIzeo.css-2b097c-container > .css-yk16xz-control.react-select__control > .css-1hwfws3.react-select__value-container.react-select__value-container--has-value > .css-1wa3eu0-placeholder.react-select__placeholder"));
+	}
+	
+	public WebElement reportFaultSeverityValue()
+	{
+		return driver.findElement(By.cssSelector(".ReportFaultModalRightSide_twoColumns6040__O5wS9 > div:nth-of-type(2) > .SelectInput-module_selectInput__UIzeo.css-2b097c-container > .css-yk16xz-control.react-select__control > .css-1hwfws3.react-select__value-container.react-select__value-container--has-value > .css-1wa3eu0-placeholder.react-select__placeholder"));
+	}
+	public WebElement errorMsgPositionIsRequired()
+	{
+		return driver.findElement(By.xpath("//div[contains(text(),'Event Case Report Position is required')]"));
+	}
+	
+	public WebElement sucessMsgEventSaved()
+	{
+		return driver.findElement(By.xpath("//div[contains(text(),'Event Case saved successfully')]"));
 	}
 }
