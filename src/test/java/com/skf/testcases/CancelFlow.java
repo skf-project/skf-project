@@ -19,6 +19,7 @@ import com.skf.pages.ReportFaultPage;
 import com.skf.pages.TurbinePage;
 import com.skf.utilities.CommonUtilities;
 
+
 public class CancelFlow extends Page {
 
 	String path = System.getProperty("user.dir");
@@ -38,12 +39,12 @@ public class CancelFlow extends Page {
 
 		turbinePage.windFarmSearchDropdown().click();
 		turbinePage.windFarmSearchSeeAllSearchResult().click();
-		utilities.javaScriptExecutorType("WO B2 15550821");
-		turbinePage.windFarmSearchRecord().click();
+		utilities.javaScriptExecutorType("VAS1");
+		turbinePage.windFarmSearchRecordVASTurbine().click();
 		Thread.sleep(3000);
-		assertTrue(turbinePage.windFarmSearchRecordOnMap().isDisplayed());
+		assertTrue(turbinePage.windFarmSearchRecordOnMapVAS1().isDisplayed());
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("arguments[0].click()", turbinePage.windFarmSearchRecordOnMap());
+		jse.executeScript("arguments[0].click()", turbinePage.windFarmSearchRecordOnMapVAS1());
 		assertTrue(turbinePage.currentStatusOnHeaderPopUp().isDisplayed());
 		turbinePage.reportFaultButton().click();
 		assertTrue(reportFault.reportHeaderLabel().isDisplayed());
@@ -72,7 +73,7 @@ public class CancelFlow extends Page {
 		assertTrue(reportFault.reportHeaderLabel().isDisplayed());
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void saveButtonFuntionalityAndErrorMessage() throws InterruptedException, IOException, AWTException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -110,7 +111,7 @@ public class CancelFlow extends Page {
 
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void submitEventButtonFuntionalityAndErrorMessages() throws InterruptedException, IOException, AWTException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
