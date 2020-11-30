@@ -99,7 +99,7 @@ public class ReportFaultPage extends Page {
 	}
 	public WebElement reportFaultCountryFirstValue()
 	{
-		return driver.findElement(By.xpath("/html/body/div/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[2]/div/div[2]/div/div[1]"));
+		return driver.findElement(By.xpath("//div[@class=\"react-select__menu-list css-11unzgr\"]/div[1]"));
 	}
 	public WebElement reportFaultCountryTickMark() 
 	{
@@ -111,7 +111,7 @@ public class ReportFaultPage extends Page {
 	}
 	public WebElement reportFaultOwnerFirstValue()
 	{
-		return driver.findElement(By.xpath("/html/body/div/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[3]/div/div[2]/div/div"));
+		return driver.findElement(By.xpath("//div[@class=\"react-select__menu-list css-11unzgr\"]/div[1]"));
 	}
 	public WebElement reportFaultOwnerTickMark()
 	{
@@ -123,7 +123,7 @@ public class ReportFaultPage extends Page {
 	}
 	public WebElement reportFaultWindFarmFirstValue()
 	{
-		return driver.findElement(By.xpath("/html/body/div/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[4]/div/div[2]/div/div[1]"));
+		return driver.findElement(By.xpath("//div[@class=\"react-select__menu-list css-11unzgr\"]/div[1]"));
 	}
 	public WebElement reportFaultWindFarmTickMark()
 	{
@@ -136,7 +136,7 @@ public class ReportFaultPage extends Page {
 	}
 	public WebElement reportFaultTurbineFirstValue()
 	{
-		return driver.findElement(By.xpath("/html/body/div/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[5]/div/div[2]/div/div[1]"));
+		return driver.findElement(By.xpath("//div[@Class=\"react-select__menu-list css-11unzgr\"]/div[1]"));
 	}
 	public WebElement reportFaultTurbineTickMark()
 	{
@@ -147,13 +147,16 @@ public class ReportFaultPage extends Page {
 	{
 		return driver.findElement(By.xpath("//body/div[@id='root']/div/main/div/div/div/div/div/div/div/section/div/div/div/div/div[6]/div[1]/div[1]"));
 	}
-	public WebElement reportFaultAssetFirstValue() {
+	public WebElement reportFaultAssetFirstValue() 
+	{
 		return driver.findElement(By.xpath("//*[@id=\"react-select-13-option-0\"]"));
 	}
-	public WebElement reportFaultAssetTickMark() {
+	public WebElement reportFaultAssetTickMark() 
+	{
 		return driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/main/div/div[3]/div/div/div/div[2]/div[2]/section[1]/div[1]/div/div/div[2]/div[6]/div[2]"));
 	}
-	public WebElement reportFaultAssetTextBox() {
+	public WebElement reportFaultAssetTextBox() 
+	{
 		return driver.findElement(By.xpath("//div[@class='ReportCommonModal_contentSection__2vkAq']//div//div[@class='']//div[@class='Filter-module_filterSelectors__23t1h']//div//div[@class='react-select__value-container css-1hwfws3']//div[@class='react-select__input']"));
 	}
 	 public boolean countryFilterNotPresent()

@@ -66,9 +66,38 @@ public class ExistingEvent extends Page{
 		 assertEquals("Add",reportFaultPage.addButtonLabel().getText());
 		 assertEquals("Product availability",reportFaultPage.productavailabilityLabel().getText());
 		 assertEquals("No dates are available", reportFaultPage.NoDatesAreAvailableLabel().getText());
+		 assertEquals("Approved",reportFaultPage.approveLabel().getText());
+		 assertTrue(reportFaultPage.approveButton().isDisplayed());
 		 assertTrue(reportFaultPage.saveButton().isDisplayed());
 		 assertTrue(reportFaultPage.submitEventButton().isDisplayed());
 		 
+  }
+  @Test
+  public void existingEventSave() throws IOException, InterruptedException
+  {
+	  fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		 config.load(fisco);
+		 LoginPage loginPage = new LoginPage();
+		 loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+		 TurbinePage turbinePage =new TurbinePage();
+		 assertTrue(turbinePage.turbineoverviewlabel().isDisplayed());
+		 turbinePage.turbineDropdown().click();
+		 turbinePage.turbinedatafield().sendKeys("WO B2 15550821");
+		 turbinePage.noptions().click();
+		 ReportFaultPage reportFaultPage = new ReportFaultPage();
+		 reportFaultPage.mapTurbine().click();
+		 assertTrue(turbinePage.turbineNameOnHeaderPopUp().isDisplayed());
+		 assertTrue(turbinePage.currentStatusOnHeaderPopUp().isDisplayed());
+		 turbinePage.reportFaultButtonOnHeaderPopUp().click();
+		 assertTrue(reportFaultPage.reportFaultFilterLabel().isDisplayed());
+		 reportFaultPage.reportFaultAssetFilter().click();
+		 reportFaultPage.reportFaultAssetFirstValue().click();
+		 Thread.sleep(15000);
+		 assertTrue(reportFaultPage.reportFaultAssetTickMark().isDisplayed());
+		 assertTrue(reportFaultPage.eventDropDown().isDisplayed());
+		 reportFaultPage.eventDropDown().click();
+		 reportFaultPage.eventDropDownFirstValue().click();
+		 reportFaultPage.positionDropdown().click();
   }
   @AfterMethod
  	public void tearDown() {
