@@ -1,6 +1,7 @@
 package com.skf.testcases;
 
 import static org.junit.Assert.assertFalse;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.FileInputStream;
@@ -90,7 +91,7 @@ public class Notification extends Page {
 		assertTrue(notificationPage.filterHeader().isDisplayed());
 		notificationPage.bellIcon().click();
 		assertTrue(notificationPage.notificationModal().isDisplayed());
-		System.out.println(notificationPage.notificationCount());
+		assertEquals(notificationPage.notificationCount(),notificationPage.belliconCount());
 		
 	}
 	
