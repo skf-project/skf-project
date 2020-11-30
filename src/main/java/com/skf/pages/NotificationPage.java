@@ -61,4 +61,8 @@ public class NotificationPage extends Page {
 	public int notificationCount() {
 		return driver.findElements(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/ul/div/div[2]/div")).size();
 	}
+	
+	public int belliconCount() {
+		return driver.findElements(By.xpath("div[title='20 notifications'] > .BellItem-module_notificationNumber__2ENF1")).size();
+	}
 }

@@ -39,18 +39,35 @@ public class EventWorkAndOrderPage extends Page {
 	}
 	
 	public WebElement closedStatus() {
-		return driver.findElement(By.xpath("//*[@id=\"pvExplorationHost\"]/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[3]/transform/div/div[3]/div/visual-modern/div/svg/g[1]/rect[2]"));
+		return driver.findElement(By.cssSelector("visual-container-repeat .visual-container-component:nth-of-type(3) [tabindex] [tabindex='0']:nth-of-type(2)"));
 	}
 	
 	public WebElement openStatus() {
-		return driver.findElement(By.xpath("//*[@id=\"pvExplorationHost\"]/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[2]/transform/div/div[3]/div/visual-modern/div/svg/g[1]/rect[2]"));
+		return driver.findElement(By.cssSelector("visual-container-modern:nth-of-type(2) > .bringToFront > .droppableElement.hideBorder.noVisualTitle.readMode.ui-droppable.unselectable.visualContainer.visualHeaderAbove visual-modern .parentGroup.treemapNode"));
 	}
 	
 	public WebElement pendingStatus() {
-		return driver.findElement(By.xpath("//*[@id=\"pvExplorationHost\"]/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[1]/transform/div/div[3]/div/visual-modern/div/svg/g[1]/rect[2]"));
+		return driver.findElement(By.cssSelector("visual-container-modern:nth-of-type(1) > .bringToFront > .droppableElement.hideBorder.noVisualTitle.readMode.ui-droppable.unselectable.visualContainer.visualHeaderAbove visual-modern .parentGroup.treemapNode"));
 	}
 	
 	public WebElement blankStatus() {
-		return driver.findElement(By.xpath("//*[@id=\"pvExplorationHost\"]/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[5]/transform/div/div[3]/div/visual-modern/div"));
+		return driver.findElement(By.cssSelector("visual-container-modern:nth-of-type(5) > .bringToFront > .droppableElement.hideBorder.noVisualTitle.readMode.ui-droppable.unselectable.visualContainer.visualHeaderAbove visual-modern  .treemap"));
 	}
+	
+	public WebElement eventCreationDateFrom() {
+		return driver.findElement(By.cssSelector("div:nth-of-type(1) > .date-slicer-input.hasDatepicker"));
+	}
+	
+	public WebElement eventCreationDateTo() {
+		return driver.findElement(By.cssSelector("div:nth-of-type(2) > .date-slicer-input.hasDatepicker"));
+	}
+	
+	public WebElement DatePicker() {
+		return driver.findElement(By.cssSelector("div#ui-datepicker-div"));
+	}
+	
+	/*
+	 * public WebElement eventCreationDateToDatePicker() { return
+	 * driver.findElement(By.cssSelector("div#ui-datepicker-div")); }
+	 */
 }
