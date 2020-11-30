@@ -207,6 +207,10 @@ public class ReportFaultPage extends Page {
 		return driver.findElement(By.cssSelector("#react-select-5-option-9"));
 	}
 
+	public WebElement severityDropdownFirstValue() {
+		return driver.findElement(By.cssSelector("#react-select-5-option-0"));
+	}
+	
 	public WebElement eventCommentTextBox() {
 		return driver.findElement(By.cssSelector(".TextArea-module_textarea__3iKgr"));
 	}
@@ -358,5 +362,28 @@ public class ReportFaultPage extends Page {
 	public WebElement descriptionTextBox()
 	{
 		return driver.findElement(By.xpath("//textarea[contains(@class,'TextArea-module_textarea__3iKgr TextArea-module_disabled__1IJEu')]"));
+	}
+	public WebElement reportFaultPositionValue()
+	{
+		return driver.findElement(By.cssSelector(".ReportFaultModalRightSide_twoColumns6040__O5wS9 > div:nth-of-type(1) > .SelectInput-module_selectInput__UIzeo.css-2b097c-container > .css-yk16xz-control.react-select__control > .css-1hwfws3.react-select__value-container.react-select__value-container--has-value > .css-1wa3eu0-placeholder.react-select__placeholder"));
+	}
+	
+	public WebElement reportFaultIndicatedFaultValue()
+	{
+		return driver.findElement(By.cssSelector(".ReportFaultModal_contentSection__3G4ZN > div:nth-of-type(2) > .SelectInput-module_selectInput__UIzeo.css-2b097c-container > .css-yk16xz-control.react-select__control > .css-1hwfws3.react-select__value-container.react-select__value-container--has-value > .css-1wa3eu0-placeholder.react-select__placeholder"));
+	}
+	
+	public WebElement reportFaultSeverityValue()
+	{
+		return driver.findElement(By.cssSelector(".ReportFaultModalRightSide_twoColumns6040__O5wS9 > div:nth-of-type(2) > .SelectInput-module_selectInput__UIzeo.css-2b097c-container > .css-yk16xz-control.react-select__control > .css-1hwfws3.react-select__value-container.react-select__value-container--has-value > .css-1wa3eu0-placeholder.react-select__placeholder"));
+	}
+	public WebElement errorMsgPositionIsRequired()
+	{
+		return driver.findElement(By.xpath("//div[contains(text(),'Event Case Report Position is required')]"));
+	}
+	
+	public WebElement sucessMsgEventSaved()
+	{
+		return driver.findElement(By.xpath("//div[contains(text(),'Event Case saved successfully')]"));
 	}
 }
