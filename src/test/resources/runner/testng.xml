@@ -35,5 +35,10 @@
 			<class name="com.skf.testcases.ReportFault" />
 		</classes>
 	</test>
+		<test name="Event Work Order ">
+		<classes>
+			<class name="com.skf.testcases.EventWorkAndOrder" />
+		</classes>
+	</test>
 
 </suite> <!-- Suite -->
