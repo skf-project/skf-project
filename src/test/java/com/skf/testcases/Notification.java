@@ -22,7 +22,7 @@ public class Notification extends Page {
 	public static Properties config = new Properties();
 	public static FileInputStream fisco;
 	
-	@Test
+	@Test 
 	public void notification1() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -65,7 +65,7 @@ public class Notification extends Page {
 		assertFalse(notificationPage.notificationModal().isDisplayed());
 	}
 	
-	@Test
+	@Test 
 	public void notification4() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -80,7 +80,7 @@ public class Notification extends Page {
 		assertFalse(notificationPage.notificationModal().isDisplayed());
 	}
 	
-	@Test
+	@Test 
 	public void notification5() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -91,7 +91,7 @@ public class Notification extends Page {
 		assertTrue(notificationPage.filterHeader().isDisplayed());
 		notificationPage.bellIcon().click();
 		assertTrue(notificationPage.notificationModal().isDisplayed());
-		assertEquals(notificationPage.notificationCount(),notificationPage.belliconCount());
+		assertEquals(notificationPage.belliconText(), notificationPage.notificationCount());
 		
 	}
 	
