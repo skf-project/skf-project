@@ -8,7 +8,7 @@ import com.skf.base.Page;
 public class NotificationPage extends Page {
 
 	public WebElement bellIcon() {
-		return driver.findElement(By.cssSelector("ul > li:nth-of-type(9)"));
+		return driver.findElement(By.cssSelector("#root > div:nth-child(2) > div.Navigator-module_navigator__1WRTE.undefined > div > ul > li:nth-child(9)"));
 	}
 
 	public WebElement filterHeader() {
@@ -62,7 +62,7 @@ public class NotificationPage extends Page {
 		return driver.findElements(By.xpath("//*[@id=\"root\"]/div[2]/div[1]/div/ul/div/div[2]/div")).size();
 	}
 	
-	public String belliconText() {
-		return driver.findElement(By.cssSelector(".BellItem-module_notificationNumber__2ENF1")).getText();
+	public int belliconCount() {
+		return driver.findElements(By.xpath("div[title='20 notifications'] > .BellItem-module_notificationNumber__2ENF1")).size();
 	}
 }
