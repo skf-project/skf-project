@@ -47,7 +47,7 @@ public class Turbine extends Page {
 		turbinePage.signOut().click();
 	}
 
-	@Test
+	@Test 
 	public void countryFilterFuntionality() throws InterruptedException, IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -72,7 +72,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.countryTickMark().isEnabled());
 	}
 
-	@Test
+	@Test 
 	public void countryFilterTypingFuntionality() throws InterruptedException, IOException, AWTException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -88,7 +88,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.countryNoOptionDropdownValue().isDisplayed());
 	}
 
-	@Test
+	@Test 
 	public void ownerFilterFuntionality() throws InterruptedException, IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -113,7 +113,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.ownerTickMark().isEnabled());
 	}
 
-	@Test
+	@Test 
 	public void ownerFilterTypingFuntionality() throws InterruptedException, IOException, AWTException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -129,7 +129,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.countryNoOptionDropdownValue().isDisplayed());
 	}
 
-	@Test
+	@Test 
 	public void turbineOverviewUI() throws IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -147,7 +147,7 @@ public class Turbine extends Page {
 
 	}
 
-	@Test
+	@Test 
 	public void regionalFilter1() throws IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -162,7 +162,7 @@ public class Turbine extends Page {
 
 	}
 
-	@Test
+	@Test 
 	public void regionalFilter2() throws IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -181,7 +181,7 @@ public class Turbine extends Page {
 		turbinePage.regionDropdownEUOption().click();
 	}
 
-	@Test
+	@Test 
 	public void regionalFilter3() throws InterruptedException, IOException, AWTException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -200,7 +200,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.regionNoOptionDropdownValue().isDisplayed());
 	}
 
-	@Test
+	@Test 
 	public void windFarmFilter1() throws IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -217,7 +217,7 @@ public class Turbine extends Page {
 
 	}
 
-	@Test
+	@Test 
 	public void windFarmFilter2() throws InterruptedException, IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -260,7 +260,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.windFarmNoOptionDropdownValue().isDisplayed());
 	}
 
-	@Test
+	@Test 
 	public void windFarmFilter4() throws InterruptedException, IOException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -277,7 +277,7 @@ public class Turbine extends Page {
 
 	}
 
-	@Test
+	@Test 
 	public void searchWindFarm() throws InterruptedException, IOException, AWTException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -293,7 +293,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.windFarmSearchRecordOnMap().isDisplayed());
 	}
 
-	@Test
+	@Test 
 	public void turbineoverview() throws Exception {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -343,7 +343,7 @@ public class Turbine extends Page {
 		assertEquals(driver.getCurrentUrl(),config.getProperty("loginPageUrl"));
 	}
 	
-	@Test
+	@Test 
 	public void lastSubmitedEventReports() throws IOException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");

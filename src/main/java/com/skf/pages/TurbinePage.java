@@ -315,22 +315,20 @@ public class TurbinePage extends Page {
 	}
 
 	public String firstReportText() {
-		String full =  driver.findElement(By.cssSelector("aside[id='eventReports'] div:nth-child(1) div:nth-child(2) span:nth-child(1)")).getText();
+		String full =  driver.findElement(By.cssSelector("div:nth-of-type(1) > .ButtonNavigation-module_buttonNavigation__3p14c > .ButtonNavigation-module_text__1-mF_")).getText();
 		String first = full.substring( 0, full.indexOf(","));
-		System.out.println(first);
 		return first;
 	}
 
 	public WebElement reportPopUpHeader() {
-		return driver.findElement(By.cssSelector("a[class='Modal-module_title__3abYu']"));
+		return driver.findElement(By.cssSelector(".Modal-module_title__3abYu"));
 	}
 
 	public String reportPopUpHeaderText() {
-		System.out.println(driver.findElement(By.cssSelector("a[class='Modal-module_title__3abYu']")).getText());
-		return driver.findElement(By.cssSelector("a[class='Modal-module_title__3abYu']")).getText();
+		return driver.findElement(By.cssSelector(".Modal-module_title__3abYu")).getText();
 	}
-	public WebElement closeButtonInTurbinePopUp()
-	{
+	
+	public WebElement closeButtonInTurbinePopUp() {
 		return driver.findElement(By.xpath("//a[@class='Modal-module_close__gwtTs']"));
 	}
 }
