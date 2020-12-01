@@ -5,7 +5,8 @@
 
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
 	<test name="Login">
@@ -27,7 +28,6 @@
 			<class name="com.skf.testcases.CancelFlow" />
 			<class name="com.skf.testcases.ExistingEvent" />
 			<class name="com.skf.testcases.SaveSubmitEventFlow" />
-			<class name="com.skf.testcases.EventWorkAndOrder" />
 		</classes>
 	</test> <!-- Test -->
 	<test name="ReportFault">
