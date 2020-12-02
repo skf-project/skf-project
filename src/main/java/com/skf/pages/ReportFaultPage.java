@@ -386,4 +386,26 @@ public class ReportFaultPage extends Page {
 	{
 		return driver.findElement(By.xpath("//div[contains(text(),'Event Case saved successfully')]"));
 	}
+	public WebElement eventValue() {
+		return driver.findElement(By.cssSelector("[class='react-select__single-value css-1uccc91-singleValue']"));
+		
+	}
+	public WebElement existingEventCommentBox()
+	{
+		return driver.findElement(By.cssSelector("textarea[class=' TextArea-module_textarea__3iKgr ']"));
+	}
+	
+	public WebElement indicatedFaultSearchedValue()
+	{
+		return driver.findElement(By.xpath("//div[@class=\"react-select__menu-list css-11unzgr\"]/div[1]"));
+	}
+	public WebElement positionSearchedValue() {
+		
+		return driver.findElement(By.xpath("//div[@class=\"react-select__menu-list css-11unzgr\"]/div[1]"));
+	}
+	
+	public WebElement eventTableFirstRowValue()
+	{
+		return driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr[1]/td[3]"));
+	}
 }
