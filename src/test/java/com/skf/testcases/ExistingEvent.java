@@ -272,7 +272,7 @@ public class ExistingEvent extends Page{
     		 reportFaultPage.uploadImageButton().click();
     		 reportFaultPage.uploadImageButton().sendKeys("C:\\Users\\Vivek\\Desktop\\Project\\test.jpg");
       }
-      @Test(enabled=false)
+      @Test
       public void existingEventSubmitFinal() throws IOException, InterruptedException, AWTException
       {
     	  fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
