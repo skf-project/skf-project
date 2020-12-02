@@ -116,7 +116,7 @@ public class ExistingEvent extends Page{
 		 robot.keyPress(KeyEvent.VK_DOWN);
 		 robot.keyPress(KeyEvent.VK_ENTER);
 		 reportFaultPage.saveButton().click();
-		 Thread.sleep(4000);
+		 Thread.sleep(10000);
 		 assertTrue(reportFaultPage.sucessMsgEventSaved().isDisplayed());
 		 
   }
@@ -272,7 +272,7 @@ public class ExistingEvent extends Page{
     		 reportFaultPage.uploadImageButton().click();
     		 reportFaultPage.uploadImageButton().sendKeys("C:\\Users\\Vivek\\Desktop\\Project\\test.jpg");
       }
-      @Test()
+      @Test(enabled=false)
       public void existingEventSubmitFinal() throws IOException, InterruptedException, AWTException
       {
     	  fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
