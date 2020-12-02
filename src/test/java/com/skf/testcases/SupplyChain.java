@@ -24,7 +24,7 @@ public class SupplyChain extends Page {
 	public static Properties config = new Properties();
 	public static FileInputStream fisco;
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void supplyChainLabelVerification() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -100,7 +100,7 @@ public class SupplyChain extends Page {
 	}
 
 	
-	@AfterMethod(enabled=false)
+	@AfterMethod(enabled=true)
 	public void tearDown() {
 		Page.driver.close();
 		driver=null;
