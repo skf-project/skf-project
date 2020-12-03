@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -143,7 +144,7 @@ public class SupplyChain extends Page {
 		assertTrue(supplychain.nodeAvailableDateLabel().getText().contains("Available Date"));
 		assertTrue(supplychain.nodeStatusLabel().getText().contains("Status"));
 	}
-	
+
 	@Test(enabled = true)
 	public void verifyProductAvailabilityLabels() throws IOException, InterruptedException, AWTException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -165,6 +166,30 @@ public class SupplyChain extends Page {
 		assertTrue(supplychain.productBearingDesignationLabel().getText().contains("Bearing Designation"));
 		assertTrue(supplychain.productAvailableDateLabel().getText().contains("Available Date"));
 		assertTrue(supplychain.productStatusLabel().getText().contains("Status"));
+	}
+
+	@Test(enabled = true)
+	public void verifyFocusMode() throws IOException, InterruptedException, AWTException {
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+		TurbinePage turbinePage = new TurbinePage();
+		SupplyChainPage supplychain = new SupplyChainPage();
+		assertTrue(turbinePage.filterLabel().isDisplayed());
+		turbinePage.supplyChainHeaderButton().click();
+		assertTrue(supplychain.supplyChainLabel().isDisplayed());
+		assertTrue(supplychain.supplyChainLabel().getText().contains("Supply Chain"));
+		Thread.sleep(10000);
+		driver.switchTo().frame(0);
+		assertTrue(supplychain.productEventIdLabel().isDisplayed());
+		Actions act = new Actions(driver);
+		act.moveByOffset(1190, 254).click().build().perform();
+		supplychain.focusButton().click();
+		Thread.sleep(3000);
+		supplychain.backToReportButton().click();
+		Thread.sleep(3000);
+		assertTrue(supplychain.productEventIdLabel().isDisplayed());
 	}
 
 	@AfterMethod(enabled = true)

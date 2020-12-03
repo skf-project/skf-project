@@ -185,5 +185,13 @@ public class SupplyChainPage extends Page {
 	public WebElement productStatusLabel() {
 		return driver.findElement(By.cssSelector("visual-container-repeat .visual-container-component:nth-of-type(9) [title='Status']"));
 	}
+	
+	public WebElement focusButton() {
+		return driver.findElement(By.xpath("//button[@class=\"vcPopOutBtn\"]"));
+	}
+	
+	public WebElement backToReportButton() {
+		return driver.findElement(By.cssSelector("visual-container-pop-out-bar button[type='button']"));
+	}
 
 }
