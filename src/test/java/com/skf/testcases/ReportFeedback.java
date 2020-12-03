@@ -54,7 +54,7 @@ public class ReportFeedback extends Page{
 		 assertTrue(reportFaultPage.reportFaultAssetTickMark().isDisplayed());
 		 assertTrue(reportFaultPage.eventDropDown().isDisplayed());
 		 reportFaultPage.eventDropDown().click();
-		 robot.keyPress(KeyEvent.VK_DOWN);
+		 //robot.keyPress(KeyEvent.VK_DOWN);
 		 robot.keyPress(KeyEvent.VK_ENTER);
 		 assertTrue(reportFaultPage.indicatedFaultLabel().isDisplayed());
 		 reportFeedbackPage.submitEventFeedbackButton().click();
@@ -103,8 +103,9 @@ public class ReportFeedback extends Page{
 		 assertTrue(reportFaultPage.reportFaultAssetTickMark().isDisplayed());
 		 assertTrue(reportFaultPage.eventDropDown().isDisplayed());
 		 reportFaultPage.eventDropDown().click();
-		 robot.keyPress(KeyEvent.VK_DOWN);
+		 //robot.keyPress(KeyEvent.VK_DOWN);
 		 robot.keyPress(KeyEvent.VK_ENTER);
+		 String eventdropdownvalue=reportFaultPage.eventValue().getText();
 		 assertTrue(reportFaultPage.indicatedFaultLabel().isDisplayed());
 		 //assertFalse(reportFeedbackPage.IndicatedFaultDropDown().isEnabled());
 		 assertTrue(reportFaultPage.positionLabel().isDisplayed());
@@ -129,6 +130,7 @@ public class ReportFeedback extends Page{
 		 reportFeedbackPage.submitEventFeedbackButton().click();
 		 Thread.sleep(10000);
 		 assertTrue(reportFeedbackPage.eventCaseSavedSucessfullyMsg().isDisplayed());
+		 assertEquals(eventdropdownvalue,reportFaultPage.eventTableFirstRowValue().getText());
 		
 		 
   }
