@@ -9,8 +9,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -99,7 +97,7 @@ public class SupplyChain extends Page {
 		supplychain.positionDropdown().click();
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void verifyAvailabilityStatus() throws IOException, InterruptedException, AWTException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -111,17 +109,62 @@ public class SupplyChain extends Page {
 		turbinePage.supplyChainHeaderButton().click();
 		assertTrue(supplychain.supplyChainLabel().getText().contains("Supply Chain"));
 		Thread.sleep(10000);
-		WebElement frame1 = driver.findElement(By.cssSelector(".report > iframe"));
-		driver.switchTo().frame(frame1);
-		WebElement frame2 = driver.findElement(By.xpath("//div[@class=\"visual visual-simpleImageEBC4593F96F1425FB3D84C5BF02B5075 allow-deferred-rendering\"]/iframe[@name='visual-sandbox']"));
-		driver.switchTo().frame(frame2);
-		//assertTrue(supplychain.turbineModelLabel().isDisplayed());
+		driver.switchTo().frame(0);
+		// assertTrue(supplychain.turbineModelLabel().isDisplayed());
 		assertTrue(supplychain.statusLabel1To5Days().getText().contains("1 to 5 days later than de"));
 		assertTrue(supplychain.statusLabel5To10Days().getText().contains("5 to 10 days later than de"));
 		assertTrue(supplychain.statusLabelAtMost1WorkDays().getText().contains("At most 1 work days later"));
 		assertTrue(supplychain.statusLabelMoreThan10WorkDays().getText().contains("More than 10 work days"));
 		assertTrue(supplychain.statusLabelNoAvailability().getText().contains("No availability - please"));
 		assertTrue(supplychain.statusLabelNoDatesAreAvaiable().getText().contains("No dates are avaiable"));
+	}
+
+	@Test(enabled = true)
+	public void verifyNodeAvailabilityLabels() throws IOException, InterruptedException, AWTException {
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+		TurbinePage turbinePage = new TurbinePage();
+		SupplyChainPage supplychain = new SupplyChainPage();
+		assertTrue(turbinePage.filterLabel().isDisplayed());
+		turbinePage.supplyChainHeaderButton().click();
+		assertTrue(supplychain.supplyChainLabel().isDisplayed());
+		assertTrue(supplychain.supplyChainLabel().getText().contains("Supply Chain"));
+		Thread.sleep(10000);
+		driver.switchTo().frame(0);
+		assertTrue(supplychain.nodeAssetModelLabel().isDisplayed());
+		assertTrue(supplychain.nodeAssetModelLabel().getText().contains("Asset Model"));
+		assertTrue(supplychain.nodeBearingDesignationLabel().getText().contains("Bearing Designation"));
+		assertTrue(supplychain.nodePositionLabel().getText().contains("Position"));
+		assertTrue(supplychain.nodeLabel().getText().contains("Node"));
+		assertTrue(supplychain.nodeQuantityLabel().getText().contains("Quantity"));
+		assertTrue(supplychain.nodeLeadTimeLabel().getText().contains("Lead Time"));
+		assertTrue(supplychain.nodeAvailableDateLabel().getText().contains("Available Date"));
+		assertTrue(supplychain.nodeStatusLabel().getText().contains("Status"));
+	}
+	
+	@Test(enabled = true)
+	public void verifyProductAvailabilityLabels() throws IOException, InterruptedException, AWTException {
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+		TurbinePage turbinePage = new TurbinePage();
+		SupplyChainPage supplychain = new SupplyChainPage();
+		assertTrue(turbinePage.filterLabel().isDisplayed());
+		turbinePage.supplyChainHeaderButton().click();
+		assertTrue(supplychain.supplyChainLabel().isDisplayed());
+		assertTrue(supplychain.supplyChainLabel().getText().contains("Supply Chain"));
+		Thread.sleep(10000);
+		driver.switchTo().frame(0);
+		assertTrue(supplychain.productEventIdLabel().isDisplayed());
+		assertTrue(supplychain.productEventIdLabel().getText().contains("Event ID"));
+		assertTrue(supplychain.productIndicatedFaultLabel().getText().contains("Indicated Fault"));
+		assertTrue(supplychain.productPositionLabel().getText().contains("Position"));
+		assertTrue(supplychain.productBearingDesignationLabel().getText().contains("Bearing Designation"));
+		assertTrue(supplychain.productAvailableDateLabel().getText().contains("Available Date"));
+		assertTrue(supplychain.productStatusLabel().getText().contains("Status"));
 	}
 
 	@AfterMethod(enabled = true)

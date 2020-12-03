@@ -129,5 +129,61 @@ public class SupplyChainPage extends Page {
 	public WebElement statusLabelNoDatesAreAvaiable() {
 		return driver.findElement(By.cssSelector(".row .cell:nth-of-type(6) .slicerText"));
 	}
+	
+	public WebElement nodeAssetModelLabel() {
+		return driver.findElement(By.cssSelector("div[title='Asset Model']"));
+	}
+	
+	public WebElement nodeBearingDesignationLabel() {
+		return driver.findElement(By.cssSelector("visual-container-repeat .visual-container-component:nth-of-type(1) [title='Bearing Designation']"));
+	}
+	
+	public WebElement nodePositionLabel() {
+		return driver.findElement(By.cssSelector("visual-container-repeat .visual-container-component:nth-of-type(1) [title='Position']"));
+	}
+	
+	public WebElement nodeLabel() {
+		return driver.findElement(By.cssSelector("[title='Node']"));
+	}
+	
+	public WebElement nodeQuantityLabel() {
+		return driver.findElement(By.cssSelector("[title='Quantity']"));
+	}
+	
+	public WebElement nodeLeadTimeLabel() {
+		return driver.findElement(By.cssSelector("[title='Lead Time']"));
+	}
+	
+	public WebElement nodeAvailableDateLabel() {
+		return driver.findElement(By.cssSelector("visual-container-repeat .visual-container-component:nth-of-type(1) [title='Available Date']"));
+	}
+
+	public WebElement nodeStatusLabel() {
+		return driver.findElement(By.cssSelector("visual-container-repeat .visual-container-component:nth-of-type(1) [title='Status']"));
+	}
+	
+	public WebElement productEventIdLabel() {
+		return driver.findElement(By.cssSelector("div[title='Event ID']"));
+	}
+	
+	public WebElement productIndicatedFaultLabel() {
+		return driver.findElement(By.cssSelector("div[title='Indicated Fault']"));
+	}
+	
+	public WebElement productPositionLabel() {
+		return driver.findElement(By.cssSelector("visual-container-repeat .visual-container-component:nth-of-type(9) [title='Position']"));
+	}
+	
+	public WebElement productBearingDesignationLabel() {
+		return driver.findElement(By.cssSelector("visual-container-repeat .visual-container-component:nth-of-type(9) [title='Bearing Designation']"));
+	}
+	
+	public WebElement productAvailableDateLabel() {
+		return driver.findElement(By.cssSelector("visual-container-repeat .visual-container-component:nth-of-type(9) [title='Available Date']"));
+	}
+	
+	public WebElement productStatusLabel() {
+		return driver.findElement(By.cssSelector("visual-container-repeat .visual-container-component:nth-of-type(9) [title='Status']"));
+	}
 
 }
