@@ -87,25 +87,47 @@ public class SupplyChainPage extends Page {
 		return driver.findElement(By.cssSelector(
 				"div:nth-of-type(7) div[role='listbox'] > .scroll-wrapper.scrollbar-inner  .scrollRegion > div > div:nth-of-type(1) > div[role='option']  .checkbox.glyphicon"));
 	}
-	
+
 	public WebElement positionDropdown() {
 		return driver.findElement(By.cssSelector(
 				"visual-container-repeat .visual-container-component:nth-of-type(13) .powervisuals-glyph"));
 	}
-	
+
 	public WebElement positionDropdownValueHIS_S_GS() {
-		return driver.findElement(By.cssSelector(
-				"div[role='option'] > span[title='HIS-S-GS']"));
+		return driver.findElement(By.cssSelector("div[role='option'] > span[title='HIS-S-GS']"));
 	}
-	
+
 	public WebElement positionDropdownValueCheckboxHIS_S_GS() {
-		return driver.findElement(By.cssSelector(
-				"[height='216'] .row:nth-of-type(1) .glyphicon"));
+		return driver.findElement(By.cssSelector("[height='216'] .row:nth-of-type(1) .glyphicon"));
 	}
-	
+
 	public WebElement eventIdDropdown() {
 		return driver.findElement(By.cssSelector(
 				"visual-container-repeat .visual-container-component:nth-of-type(14) .powervisuals-glyph"));
+	}
+
+	public WebElement statusLabel1To5Days() {
+		return driver.findElement(By.cssSelector(".row .cell:nth-of-type(1) .slicerText"));
+	}
+	
+	public WebElement statusLabel5To10Days() {
+		return driver.findElement(By.cssSelector(".row .cell:nth-of-type(2) .slicerText"));
+	}
+	
+	public WebElement statusLabelAtMost1WorkDays() {
+		return driver.findElement(By.cssSelector(".row .cell:nth-of-type(3) .slicerText"));
+	}
+	
+	public WebElement statusLabelMoreThan10WorkDays() {
+		return driver.findElement(By.cssSelector(".row .cell:nth-of-type(4) .slicerText"));
+	}
+	
+	public WebElement statusLabelNoAvailability() {
+		return driver.findElement(By.cssSelector(".row .cell:nth-of-type(5) .slicerText"));
+	}
+	
+	public WebElement statusLabelNoDatesAreAvaiable() {
+		return driver.findElement(By.cssSelector(".row .cell:nth-of-type(6) .slicerText"));
 	}
 
 }
