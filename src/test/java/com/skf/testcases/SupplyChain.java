@@ -107,8 +107,6 @@ public class SupplyChain extends Page {
 		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		TurbinePage turbinePage = new TurbinePage();
 		SupplyChainPage supplychain = new SupplyChainPage();
-		CommonUtilities utilities = new CommonUtilities();
-		Robot robot = new Robot();
 		assertTrue(turbinePage.filterLabel().isDisplayed());
 		turbinePage.supplyChainHeaderButton().click();
 		assertTrue(supplychain.supplyChainLabel().getText().contains("Supply Chain"));
