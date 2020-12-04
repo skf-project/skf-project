@@ -24,7 +24,7 @@ public class EventWorkAndOrder extends Page {
 	public static Properties config = new Properties();
 	public static FileInputStream fisco;
 	
-	@Test 
+	@Test (enabled = false)
 	public void eventWorkOrderpageTittle() throws IOException, InterruptedException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -41,7 +41,7 @@ public class EventWorkAndOrder extends Page {
 		assertEquals(eventWorkAndOrderPage.pageTittleText(),config.getProperty("eventAndWordOrderPageTittle"));
 	}
 	
-	@Test 
+	@Test (enabled = false)
 	public void statusFilters() throws IOException, InterruptedException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -81,9 +81,13 @@ public class EventWorkAndOrder extends Page {
 		assertTrue(eventWorkAndOrderPage.eventCreationDateFrom().isDisplayed());
 		assertTrue(eventWorkAndOrderPage.eventCreationDateTo().isDisplayed());
 		eventWorkAndOrderPage.eventCreationDateFrom().click();
-		assertTrue(eventWorkAndOrderPage.DatePicker().isDisplayed());
+		assertTrue(eventWorkAndOrderPage.datePicker().isDisplayed());
 		eventWorkAndOrderPage.eventCreationDateTo().click();
-		assertTrue(eventWorkAndOrderPage.DatePicker().isDisplayed());
+		assertTrue(eventWorkAndOrderPage.datePicker().isDisplayed());		
+		eventWorkAndOrderPage.eventCreationDateFrom().click();
+		assertTrue(eventWorkAndOrderPage.datePicker().isDisplayed());
+		eventWorkAndOrderPage.clickOnDate2().click();
+		assertEquals(eventWorkAndOrderPage.eventCreationDateFromText(),config.getProperty("selectedDate"));
 	}
 
 	@AfterMethod 

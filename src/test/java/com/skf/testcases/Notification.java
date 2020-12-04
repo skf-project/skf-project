@@ -22,7 +22,7 @@ public class Notification extends Page {
 	public static Properties config = new Properties();
 	public static FileInputStream fisco;
 	
-	@Test 
+	@Test (enabled = false)
 	public void notification1() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -34,7 +34,7 @@ public class Notification extends Page {
 		
 	}
 	
-	@Test 
+	@Test (enabled = false)
 	public void notification2() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -50,7 +50,7 @@ public class Notification extends Page {
 		assertFalse(notificationPage.notificationOnNotificationModal().isDisplayed());
 	}
 	
-	@Test 
+	@Test (enabled = false)
 	public void notification3() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -65,7 +65,7 @@ public class Notification extends Page {
 		assertFalse(notificationPage.notificationModal().isDisplayed());
 	}
 	
-	@Test 
+	@Test (enabled = false)
 	public void notification4() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -80,7 +80,7 @@ public class Notification extends Page {
 		assertFalse(notificationPage.notificationModal().isDisplayed());
 	}
 	
-	@Test 
+	@Test (enabled = false)
 	public void notification5() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -95,7 +95,7 @@ public class Notification extends Page {
 		
 	}
 	
-	@Test 
+	@Test (enabled = false)
 	public void notification6() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
