@@ -58,16 +58,21 @@ public class EventWorkAndOrderPage extends Page {
 		return driver.findElement(By.cssSelector("div:nth-of-type(1) > .date-slicer-input.hasDatepicker"));
 	}
 	
+	public String eventCreationDateFromText() {
+		return driver.findElement(By.cssSelector("div:nth-of-type(1) > .date-slicer-input.hasDatepicker")).getText();
+	}
+	
 	public WebElement eventCreationDateTo() {
 		return driver.findElement(By.cssSelector("div:nth-of-type(2) > .date-slicer-input.hasDatepicker"));
 	}
 	
-	public WebElement DatePicker() {
+	public WebElement datePicker() {
 		return driver.findElement(By.cssSelector("div#ui-datepicker-div"));
 	}
 	
-	/*
-	 * public WebElement eventCreationDateToDatePicker() { return
-	 * driver.findElement(By.cssSelector("div#ui-datepicker-div")); }
-	 */
+	
+	public WebElement clickOnDate2() {
+		return driver.findElement(By.cssSelector("tr:nth-of-type(1) > td:nth-of-type(2) > .ui-state-default"));
+	}
+	
 }
