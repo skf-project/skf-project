@@ -30,9 +30,21 @@
 			<class name="com.skf.testcases.SaveSubmitEventFlow" />
 		</classes>
 	</test> <!-- Test -->
-	<test name="ReportFault">
+	<test name="Report">
 		<classes>
 			<class name="com.skf.testcases.ReportFault" />
+			<class name="com.skf.testcases.ReportFeedback" />
+		</classes>
+	</test>
+		<test name="Event Work Order ">
+		<classes>
+			<class name="com.skf.testcases.EventWorkAndOrder" />
+		</classes>
+	</test>
+	
+		<test name="Supply Chain ">
+		<classes>
+			<class name="com.skf.testcases.SupplyChain" />
 		</classes>
 	</test>
 

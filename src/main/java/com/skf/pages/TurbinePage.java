@@ -331,4 +331,8 @@ public class TurbinePage extends Page {
 	public WebElement closeButtonInTurbinePopUp() {
 		return driver.findElement(By.xpath("//a[@class='Modal-module_close__gwtTs']"));
 	}
+	
+	public WebElement supplyChainHeaderButton() {
+		return driver.findElement(By.xpath("//a[contains(text(),\"Supply Chain\")]/.."));
+	}
 }
