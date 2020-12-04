@@ -258,10 +258,6 @@ public class SupplyChainPage extends Page {
 		return driver.findElement(By.cssSelector("[aria-label='Focus mode']"));
 	}
 	
-	public WebElement backToReportButton() {
-		return driver.findElement(By.cssSelector("visual-container-pop-out-bar button[type='button']"));
-	}
-	
 	public WebElement productAvaibilityByEvent() {
 		return driver.findElement(By.cssSelector("div[title='Product availability by event']  .preTextWithEllipsis"));
 	}

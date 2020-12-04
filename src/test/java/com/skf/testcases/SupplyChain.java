@@ -5,9 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-
-import static org.testng.Assert.assertTrue;
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -107,11 +104,6 @@ public class SupplyChain extends Page {
 		supplyChainPage.backToReportButton().click();
 		assertTrue(supplyChainPage.focusModeButton().isDisplayed());	
 	}
-	
-	@AfterMethod
-	public void tearDown() {
-		Page.driver.close();
-		driver=null;
 
 	@Test(enabled = true)
 	public void supplyChainLabelVerification() throws IOException, InterruptedException {
