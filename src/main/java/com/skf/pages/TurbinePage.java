@@ -311,7 +311,7 @@ public class TurbinePage extends Page {
 		return driver.findElement(By.xpath("//*[@id=\"root\"]//button[contains(text(),'Report fault')]"));
 	}
 	public WebElement firstReportFromReportList() {
-		return driver.findElement(By.cssSelector("aside[id='eventReports'] div:nth-child(1) div:nth-child(2) span:nth-child(1)"));
+		return driver.findElement(By.cssSelector("div:nth-of-type(1) > .ButtonNavigation-module_buttonNavigation__3p14c > .ButtonNavigation-module_text__1-mF_"));
 	}
 
 	public String firstReportText() {

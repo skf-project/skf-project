@@ -368,6 +368,7 @@ public class Turbine extends Page {
 				config.getProperty("validPassword"));
 		TurbinePage turbinePage = new TurbinePage();
 		assertTrue(turbinePage.lastSubmitedEventReportsLabelText().isDisplayed());
+		Thread.sleep(3000);
 		assertTrue(turbinePage.firstReportFromReportList().isDisplayed());
 		turbinePage.firstReportFromReportList().click();
 		assertTrue(turbinePage.reportPopUpHeader().isDisplayed());
