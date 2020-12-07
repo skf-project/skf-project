@@ -24,7 +24,7 @@ public class EventWorkAndOrder extends Page {
 	public static Properties config = new Properties();
 	public static FileInputStream fisco;
 	
-	@Test (enabled = false)
+	@Test 
 	public void eventWorkOrderpageTittle() throws IOException, InterruptedException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -41,7 +41,7 @@ public class EventWorkAndOrder extends Page {
 		assertEquals(eventWorkAndOrderPage.pageTittleText(),config.getProperty("eventAndWordOrderPageTittle"));
 	}
 	
-	@Test (enabled = false)
+	@Test 
 	public void statusFilters() throws IOException, InterruptedException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -63,7 +63,7 @@ public class EventWorkAndOrder extends Page {
 		eventWorkAndOrderPage.closedStatus().click();
 	}
 
-	@Test 
+	@Test (enabled = false)
 	public void eventCreationDate() throws IOException, InterruptedException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
