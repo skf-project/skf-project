@@ -9,39 +9,39 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import com.skf.base.Page;
+import com.skf.pages.AnalyticsPage;
 import com.skf.pages.ElementExisitsPage;
 import com.skf.pages.LoginPage;
-import com.skf.pages.AnalyticsPage;
 
-public class Test_wind_4 extends Page{
-	
+public class Test_wind_7 extends Page{
 	String path = System.getProperty("user.dir");
 	public static Properties config = new Properties();
 	public static FileInputStream fisco;
 	
+
   @Test
-  public void verifyAnalyticsReliability() throws Exception {
-	  
-		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+  public void verifyAnalyticsAI() throws Exception {
+	  fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginApp(config.getProperty("test_wind_4_login"), config.getProperty("test_wind_4_pass"));
+		loginPage.loginApp(config.getProperty("test_wind_7_login"), config.getProperty("test_wind_7_pass"));
 		AnalyticsPage analyticsPage = new AnalyticsPage();
 		ElementExisitsPage elemenetExixitsPage = new ElementExisitsPage();
 		elemenetExixitsPage.isTurbineOverviewPresent();
 		elemenetExixitsPage.isEventWorkOrderPresent();
 		elemenetExixitsPage.isAnalyticsPresent();
-		elemenetExixitsPage.isAnalyticsAiPresent();
 		elemenetExixitsPage.isAnalyticsInsightsPresent();
 		elemenetExixitsPage.isAnalyticsSensorRollerPresent();
 		elemenetExixitsPage.isAnalyticsSkfPresent();
-		assertTrue(analyticsPage.reliabilityLabel().isDisplayed());
+		elemenetExixitsPage.isAnalyticsReliabilityPresent();
+		assertTrue(analyticsPage.aiLabel().isDisplayed());
 		
-  }
-  @AfterMethod
- 	public void tearDown() {
- 		Page.driver.close();
- 		driver=null;
- 		log.debug("Browser closed");
-  }
+}
+@AfterMethod
+	public void tearDown() {
+		Page.driver.close();
+		driver=null;
+		log.debug("Browser closed");
+}
+  
 }
