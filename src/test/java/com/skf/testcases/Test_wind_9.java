@@ -6,6 +6,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import com.skf.base.Page;
@@ -28,6 +29,7 @@ public class Test_wind_9 extends Page {
 		 loginPage.loginApp(config.getProperty("test_wind_9_login"), config.getProperty("test_wind_9_pass"));
 		 TurbinePage turbinePage =new TurbinePage();
 		 assertTrue(turbinePage.turbineoverviewlabel().isDisplayed());
+		 assertTrue(turbinePage.filterLabel().isDisplayed());
 		 turbinePage.turbineDropdown().click();
 		 turbinePage.turbinedatafield().sendKeys("WO B2 15550821");
 		 turbinePage.noptions().click();
@@ -67,4 +69,11 @@ public class Test_wind_9 extends Page {
 		 assertTrue(reportFaultPage.saveButton().isDisplayed());
 		 assertTrue(reportFaultPage.submitEventButton().isDisplayed());
   }
+  
+  @AfterMethod
+	public void tearDown() {
+		Page.driver.close();
+		driver=null;
+		log.debug("Browser closed");
+}
 }
