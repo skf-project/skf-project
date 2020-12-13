@@ -28,7 +28,7 @@ public class SupplyChain extends Page {
 	String path = System.getProperty("user.dir");
 	public static Properties config = new Properties();
 	public static FileInputStream fisco;
-	
+
 	@Test 
 	public void verifyDataInKpiSection() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -58,7 +58,7 @@ public class SupplyChain extends Page {
 		assertTrue(supplyChainPage.avaibilityStatus().isDisplayed());
 		assertEquals(supplyChainPage.avaibilityStatus().getAttribute("src") , config.getProperty("indicAvaibilityStatus"));
 	}
-	
+
 	@Test 
 	public void verifyBearingsToBeReplacedAvailability() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -81,7 +81,7 @@ public class SupplyChain extends Page {
 		assertTrue(supplyChainPage.categoryHierarchy().isDisplayed());
 		assertEquals(eventIDSelectedValue, supplyChainPage.categoryHierarchy().getText());		
 	}
-	
+
 	@Test 
 	public void validateFocusMode() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -271,6 +271,54 @@ public class SupplyChain extends Page {
 		Thread.sleep(3000);
 		assertTrue(supplychain.productEventIdLabel().isDisplayed());
 	}
+
+
+	@Test(enabled = true)
+	public void TurbineModule() throws IOException, InterruptedException {
+
+		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
+		config.load(fisco);
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
+		Thread.sleep(10000);
+		SupplyChainPage objSupplyChain = new SupplyChainPage();
+		objSupplyChain.clickSupplyChainLink();
+		Thread.sleep(20000);
+		System.out.println("Clicked ELement");
+		String[] arrayofValues= new String[200];
+		String[] filepath = new String[]{"SupplyChain_TurbineModel.csv","SupplyChain_TurbineID.csv","SupplyChain_TurbineAsset.csv","SupplyChain_TurbinePosition.csv","SupplyChain_TurbineEventID.csv"};
+		driver.switchTo().frame(0);
+		Thread.sleep(10000);
+		List<WebElement> listofDropDown = driver.findElements(By.xpath("//div[@class='slicer-content-wrapper']"));
+
+		//listofDropDown = driver.findElements(By.xpath("//i[@class='dropdown-chevron powervisuals-glyph chevron-down']"));
+		System.out.println("Starts with"+listofDropDown.size());
+		for (int i = 0; i < listofDropDown.size(); i++) {
+			WebElement ele =listofDropDown.get(i);
+			ele.click();
+			Thread.sleep(3000);
+			List<WebElement>moreOptionsDrp = driver.findElements(By.xpath("//span[@class='slicer-header-clear enable-hover']"));
+			Thread.sleep(5000);
+			moreOptionsDrp.get(i).click();
+			driver.findElement(By.cssSelector("button[aria-label=\"More options\"]>i")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.cssSelector("i[class=\"dropdown-icon itemIcon glyphicon pbi-glyph-export glyph-small\"")).click();
+			Thread.sleep(3000);
+			Set<String>handles =driver.getWindowHandles();
+			System.out.println("Size is"+handles.size());
+			driver.switchTo().activeElement();
+			Select select = new Select(driver.findElement(By.xpath("//*[@id=\"formatSelect\"]")));
+			select.selectByValue("1");
+			Thread.sleep(3000);
+			objCommon.javaScriptClick(driver.findElement(By.xpath("//button[@type=\"submit\"]")));
+			Thread.sleep(15000);
+
+		}
+
+	}
+
+
+
 
 	@AfterMethod(enabled = true)
 	public void tearDown() {

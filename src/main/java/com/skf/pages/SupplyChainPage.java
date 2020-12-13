@@ -1,6 +1,9 @@
 package com.skf.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import com.skf.base.Page;
@@ -264,6 +267,43 @@ public class SupplyChainPage extends Page {
 	
 	public String quantityValue() {
 		return driver.findElement(By.cssSelector("visual-container-modern:nth-of-type(5) > .bringToFront > .droppableElement.hideBorder.noVisualTitle.readMode.ui-droppable.unselectable.visualContainer.visualHeaderBelow visual-modern  .card  .value > tspan")).getText();
+	}
+
+	public WebElement turbineDropdown() {
+		return driver.findElement(
+				By.cssSelector(".Filter-module_filterSelectors__23t1h div:nth-of-type(5) [class='css-19bqh2r']"));
+	}
+
+
+
+	public WebElement supplyChainLink() {
+		return driver.findElement(By.linkText("Supply Chain"));
+
+	}
+	
+	public void javaScriptCLick(WebElement clickableElement) {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("arguments[0].click()", clickableElement);
+
+	}
+
+	public void clickSupplyChainLink() {
+		this.javaScriptCLick(this.supplyChainLink());
+
+	}
+
+	public void getDropDownValues() {
+		List<WebElement> listofDropDown = driver.findElements(By.xpath("//div[@class=\"slicer-dropdown-menu\"]"));
+
+		for (WebElement webElement : listofDropDown) {
+			System.out.println("Clicked ELement"+webElement);
+			webElement.click();
+			List<WebElement> drpValues = driver.findElements(By.xpath("//div[@class=\"slicerCheckbox\"]"));
+			for (WebElement webElement2 : drpValues) {
+				String value = webElement2.getText();
+				System.out.println("Clicked ELement"+value);	
+			}
+		}
 	}
 
 }
