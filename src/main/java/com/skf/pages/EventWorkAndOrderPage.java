@@ -1,5 +1,7 @@
 package com.skf.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -73,6 +75,65 @@ public class EventWorkAndOrderPage extends Page {
 	
 	public WebElement clickOnDate2() {
 		return driver.findElement(By.cssSelector("tr:nth-of-type(1) > td:nth-of-type(2) > .ui-state-default"));
+	}
+	
+
+	public WebElement indicatedFaultsScroller() {
+		return driver.findElement(By.xpath("//div[@class=\"scroll-element scroll-y scroll-scrolly_visible\"]/div/div[3]"));
+	} 
+	
+	public WebElement severityRoller() {
+		return driver.findElement(By.xpath("//div[@class=\"slicerContainer isMultiSelectEnabled\"]/div[@class=\"slicerBody\"]/div[@class=\"scroll-wrapper scrollbar-inner\"]/div[3]/div/div[3]"));
+	}
+	
+	public WebElement leftScroller() {
+		return driver.findElement(By.xpath("//div[@class=\"noUi-handle noUi-handle-lower backgroundToSolidBackgroundColor highContrastSelectedBorderColor\"]"));
+	}
+	
+	public WebElement rightScroller()
+	{
+		return driver.findElement(By.xpath("//div[@class=\"noUi-handle noUi-handle-upper backgroundToSolidBackgroundColor highContrastSelectedBorderColor\"]"));
+	}
+	
+	public List<WebElement> eventCreationdateTextbox(){
+		return driver.findElements(By.cssSelector("input[class=\"date-slicer-input hasDatepicker enable-hover\"]"));
+	}
+	
+	public WebElement severitySearchTextBox() {
+		return driver.findElement(By.cssSelector("div:nth-child(40) > div.slicer-dropdown-content > div > div.searchHeader.collapsed > input"));
+	}
+	
+	public WebElement selectedDate() {
+		return driver.findElement(By.xpath("//a[@class=\"ui-state-default ui-state-active\"]"));
+	}
+	
+
+
+	public WebElement eventworkOrderLink() {
+		return driver.findElement(By.linkText("Event & Work Orders"));
+		
+	}
+	
+	public void clickeventworkOrderLink() {
+		 javaScriptCLick(this.eventworkOrderLink());
+		
+	}
+	
+	public void getDropDownValues() {
+		
+		List<WebElement> listofDropDown = driver.findElements(By.xpath("//div[@class=\"slicer-dropdown-menu\"]"));
+		
+		for (WebElement webElement : listofDropDown) {
+			System.out.println("Clicked ELement"+webElement);
+			webElement.click();
+			List<WebElement> drpValues = driver.findElements(By.xpath("//div[@class=\"slicerCheckbox\"]"));
+			for (WebElement webElement2 : drpValues) {
+				String value = webElement2.getText();
+				System.out.println("Clicked ELement"+value);	
+			}
+		}
+		
+		
 	}
 	
 }
