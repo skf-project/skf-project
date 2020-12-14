@@ -10,9 +10,14 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -279,6 +284,7 @@ public class SupplyChain extends Page {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
+		CommonUtilities objCommon=new CommonUtilities();
 		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		Thread.sleep(10000);
 		SupplyChainPage objSupplyChain = new SupplyChainPage();
