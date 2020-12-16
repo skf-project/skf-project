@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SKF Automation Project">
+
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+
+	<test name="RoleBased">
+		<classes>
+			<class name="com.skf.testcases.Test_wind_2" />
+			<class name="com.skf.testcases.Test_wind_3" />
+			<class name="com.skf.testcases.Test_wind_4" />
+			<class name="com.skf.testcases.Test_wind_5" />
+			<class name="com.skf.testcases.Test_wind_6" />
+			<class name="com.skf.testcases.Test_wind_7" />
+			<class name="com.skf.testcases.Test_wind_8" />
+			<class name="com.skf.testcases.Test_wind_9" />
+			<class name="com.skf.testcases.Test_wind_10" />
+			<class name="com.skf.testcases.Test_wind_12" />
+			<class name="com.skf.testcases.Test_wind_13" />
+			<class name="com.skf.testcases.Test_wind_14" />
+			<class name="com.skf.testcases.Test_wind_16" />
+			<class name="com.skf.testcases.Test_wind_17" />
+			<class name="com.skf.testcases.Test_wind_18" />
+			<class name="com.skf.testcases.Test_wind_19"/>
+			<class name="com.skf.testcases.Test_wind_20" />
+			<class name="com.skf.testcases.Test_wind_21" />
+			<class name="com.skf.testcases.Test_wind_22" />
+			<class name="com.skf.testcases.Test_wind_23" />
+			<class name="com.skf.testcases.Test_wind_24" />
+			<class name="com.skf.testcases.Test_wind_25" />
+			<class name="com.skf.testcases.Test_wind_26" />
+			<class name="com.skf.testcases.Test_wind_27" />
+			<class name="com.skf.testcases.Test_wind_28" />
+			<class name="com.skf.testcases.Test_wind_29" />
+			<class name="com.skf.testcases.Test_wind_30" />
+			<class name="com.skf.testcases.Test_wind_31" />
+			<class name="com.skf.testcases.Test_wind_32" />
+			<class name="com.skf.testcases.Test_wind_33" />
+			<class name="com.skf.testcases.Test_wind_34" />
+			<class name="com.skf.testcases.Test_wind_35" />
+			<class name="com.skf.testcases.Test_wind_36" />
+			<class name="com.skf.testcases.Test_wind_37" />
+			<class name="com.skf.testcases.Test_wind_38" />
+			<class name="com.skf.testcases.Test_wind_39" />
+			<class name="com.skf.testcases.Test_wind_40" />
+			<class name="com.skf.testcases.Test_wind_41" />
+			<class name="com.skf.testcases.Test_wind_42" />
+			<class name="com.skf.testcases.Test_wind_43" />
+			<class name="com.skf.testcases.Test_wind_44" />
+			<class name="com.skf.testcases.Test_wind_45" />
+			<class name="com.skf.testcases.Test_wind_46" />
+			<class name="com.skf.testcases.Test_wind_47" />
+			<class name="com.skf.testcases.Test_wind_48" />
+			<class name="com.skf.testcases.Test_wind_49" />
+			<class name="com.skf.testcases.Test_wind_50" />
+			<class name="com.skf.testcases.Test_wind_51" />
+			<class name="com.skf.testcases.Test_wind_52" />
+			<class name="com.skf.testcases.Test_wind_53" />
+			<class name="com.skf.testcases.Test_wind_54" />
+			<class name="com.skf.testcases.Test_wind_55" />
+			<class name="com.skf.testcases.Test_wind_56" />
+			<class name="com.skf.testcases.Test_wind_57" />
+			<class name="com.skf.testcases.Test_wind_58" />
+			<class name="com.skf.testcases.Test_wind_59" />
+			<class name="com.skf.testcases.Test_wind_60" />
+			<class name="com.skf.testcases.Test_wind_61" />
+			<class name="com.skf.testcases.Test_wind_62" />
+			<class name="com.skf.testcases.Test_wind_63" />
+			<class name="com.skf.testcases.Test_wind_64" />
+			<class name="com.skf.testcases.Test_wind_65" />
+			<class name="com.skf.testcases.Test_wind_66" />
+			<class name="com.skf.testcases.Test_wind_67" />
+			<class name="com.skf.testcases.Test_wind_68" />
+			<class name="com.skf.testcases.Test_wind_69" />
+			<class name="com.skf.testcases.Test_wind_70" />
+			<class name="com.skf.testcases.Test_wind_71" />
+			<class name="com.skf.testcases.Test_wind_72" />
+			<class name="com.skf.testcases.Test_wind_73" />
+			<class name="com.skf.testcases.Test_wind_74" />
+			<class name="com.skf.testcases.Test_wind_75" />
+			<class name="com.skf.testcases.Test_wind_76" />
+			<class name="com.skf.testcases.Test_wind_77" />
+			<class name="com.skf.testcases.Test_wind_78" />
+			<class name="com.skf.testcases.Test_wind_79" />
+			<class name="com.skf.testcases.Test_wind_80" />
+			<class name="com.skf.testcases.Test_wind_81" />
+			<class name="com.skf.testcases.Test_wind_82" />
+			<class name="com.skf.testcases.Test_wind_83" />
+			<class name="com.skf.testcases.Test_wind_84" />
+			<class name="com.skf.testcases.Test_wind_85" />
+			<class name="com.skf.testcases.Test_wind_86" />
+			<class name="com.skf.testcases.Test_wind_87" />
+			<class name="com.skf.testcases.Test_wind_88" />
+			<class name="com.skf.testcases.Test_wind_90" />
+			<class name="com.skf.testcases.Test_wind_91" />
+			<class name="com.skf.testcases.Test_wind_92" />
+			<class name="com.skf.testcases.Test_wind_94" />
+			<class name="com.skf.testcases.Test_wind_96" />
+			<class name="com.skf.testcases.Test_wind_97" />
+			<class name="com.skf.testcases.Test_wind_98" />
+			<class name="com.skf.testcases.Test_wind_99" />
+			<class name="com.skf.testcases.Test_wind_100" />
+			<class name="com.skf.testcases.Test_wind_101" />
+			<class name="com.skf.testcases.Test_wind_102" />
+			<class name="com.skf.testcases.Test_wind_103" />
+			<class name="com.skf.testcases.Test_wind_104" />
+			<class name="com.skf.testcases.Test_wind_105" />
+			<class name="com.skf.testcases.Test_wind_106" />
+			<class name="com.skf.testcases.Test_wind_107" />
+			<class name="com.skf.testcases.Test_wind_108" />
+			<class name="com.skf.testcases.Test_wind_109" />
+			<class name="com.skf.testcases.Test_wind_110" />
+			<class name="com.skf.testcases.Test_wind_111" />
+			<class name="com.skf.testcases.Test_wind_112" />
+			<class name="com.skf.testcases.Test_wind_113" />
+			<class name="com.skf.testcases.Test_wind_114" />
+			<class name="com.skf.testcases.Test_wind_116" />
+			<class name="com.skf.testcases.Test_wind_117" />
+			<class name="com.skf.testcases.Test_wind_118" />
+			<class name="com.skf.testcases.Test_wind_120" />
+			<class name="com.skf.testcases.Test_wind_122" />
+			<class name="com.skf.testcases.Test_wind_123" />
+			<class name="com.skf.testcases.Test_wind_124" />
+			<class name="com.skf.testcases.Test_wind_125" />
+			<class name="com.skf.testcases.Test_wind_126" />
+			<class name="com.skf.testcases.Test_wind_127" />
+			<class name="com.skf.testcases.Test_wind_128" />
+			<class name="com.skf.testcases.Test_wind_129" />
+			<class name="com.skf.testcases.Test_wind_130" />
+			<class name="com.skf.testcases.Test_wind_131" />
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->
