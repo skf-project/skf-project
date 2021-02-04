@@ -306,14 +306,14 @@ public class Turbine extends Page {
 		TurbinePage turbinePage = new TurbinePage();
 		assertTrue(turbinePage.turbineoverviewlabel().isDisplayed());
 		turbinePage.turbineDropdown().click();
-		assertTrue(turbinePage.firstValueOfTurbineDropDown().getText().contentEquals("15355"));
+		//assertTrue(turbinePage.firstValueOfTurbineDropDown().getText().contentEquals("15355"));
 		turbinePage.firstValueOfTurbineDropDown().click();
 		assertTrue(turbinePage.clearall().isDisplayed());
 		assertTrue(turbinePage.tick().isDisplayed());
 		turbinePage.clearall().click();
 		turbinePage.turbineDropdown().click();
 		turbinePage.secondValueOfTurbineDropDown().click();
-		turbinePage.thirdValueOfTurbineDropDown().click();
+		//turbinePage.thirdValueOfTurbineDropDown().click();
 		assertTrue(turbinePage.clearall().isDisplayed());
 		turbinePage.clearall().click();
 		turbinePage.turbineDropdown().click();
