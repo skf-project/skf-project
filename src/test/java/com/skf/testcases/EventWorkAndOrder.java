@@ -39,8 +39,8 @@ public class EventWorkAndOrder extends Page {
 	List<WebElement> listofDropDown ;
 	Iterator<WebElement> itr;
 	
-	@Test 
-	public void EventWorkAndOrderPageTittle() throws IOException, InterruptedException {
+	@Test (enabled = true)
+	public void EventWorkAndOrderPageTitle() throws IOException, InterruptedException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -56,7 +56,7 @@ public class EventWorkAndOrder extends Page {
 		assertEquals(eventWorkAndOrderPage.pageTittleText(),config.getProperty("eventAndWordOrderPageTittle"));
 	}
 	
-	@Test 
+	@Test (enabled = true)
 	public void statusFilters() throws IOException, InterruptedException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -78,7 +78,7 @@ public class EventWorkAndOrder extends Page {
 		eventWorkAndOrderPage.closedStatus().click();
 	}
 
-	@Test (enabled = false)
+	@Test (enabled = true)
 	public void eventCreationDate() throws IOException, InterruptedException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
@@ -150,7 +150,7 @@ public class EventWorkAndOrder extends Page {
 	}
 
 
-	@Test(enabled =true)
+	@Test(enabled = true)
 	public void eventRoller() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -197,7 +197,7 @@ public class EventWorkAndOrder extends Page {
 
 	}
 
-	@Test(enabled =true)
+	@Test(enabled = true)
 	public void indicatedFaultFilter() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -280,7 +280,7 @@ public class EventWorkAndOrder extends Page {
 				Thread.sleep(5000);
 				openCount = driver.findElements(By.xpath("//div[@title='Open']"));
 				int size = openCount.size();
-				Assert.assertEquals(size, 40);
+				Assert.assertNotEquals(size, 0);
 				Assert.assertTrue((listofDropDown.get(i+1).getAttribute("aria-label").contains("0")));
 				Assert.assertTrue((listofDropDown.get(i-1).getAttribute("aria-label").contains("0")));
 				listofDropDown.get(i).click();
@@ -292,7 +292,7 @@ public class EventWorkAndOrder extends Page {
 				Thread.sleep(5000);
 				openCount = driver.findElements(By.xpath("//div[@title='Pending']"));
 				int size = openCount.size();
-				Assert.assertEquals(size, 24);
+				Assert.assertNotEquals(size, 0);
 				Assert.assertTrue((listofDropDown.get(i+1).getAttribute("aria-label").contains("0")));
 				Assert.assertTrue((listofDropDown.get(i+2).getAttribute("aria-label").contains("0")));
 				listofDropDown.get(i).click();
@@ -330,10 +330,10 @@ public class EventWorkAndOrder extends Page {
 		toDate.sendKeys(Keys.TAB);
 		Thread.sleep(5000);
 
-		drpValues = driver.findElements(By.cssSelector("div[title=\"Open\"]"));
+		drpValues = driver.findElements(By.xpath("//div[@title=\"Open\"]"));
 		Assert.assertTrue(drpValues.equals(3));
 
-		drpValues = driver.findElements(By.cssSelector("div[title=\"Closed\"]"));
+		drpValues = driver.findElements(By.xpath("//div[title=\"Closed\"]"));
 		Assert.assertTrue(drpValues.equals(2));
 
 	}
@@ -382,7 +382,7 @@ public class EventWorkAndOrder extends Page {
 
 	@Test(enabled = true)
 	public void validateDropdownValues() throws Exception {
-		CSVReader reader = new CSVReader(new FileReader("E:\\SKFWorkspace\\Project\\skf-project\\src\\test\\resources\\pdfDownload\\Company.csv"));
+		CSVReader reader = new CSVReader(new FileReader(path+"\\src\\test\\resources\\pdfDownload\\Company.csv"));
 
 		List<String[]> li=reader.readAll();
 		System.out.println("Total rows which we have is "+li.size());

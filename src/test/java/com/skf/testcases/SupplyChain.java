@@ -1,6 +1,5 @@
 package com.skf.testcases;
 
-
 import static org.junit.Assert.assertFalse;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -25,7 +24,6 @@ import com.skf.base.Page;
 import com.skf.pages.LoginPage;
 import com.skf.pages.SupplyChainPage;
 import com.skf.pages.TurbinePage;
-
 import com.skf.utilities.CommonUtilities;
 
 public class SupplyChain extends Page {
@@ -34,13 +32,12 @@ public class SupplyChain extends Page {
 	public static Properties config = new Properties();
 	public static FileInputStream fisco;
 
-	@Test 
+	@Test
 	public void verifyDataInKpiSection() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginApp(config.getProperty("validUsername"),
-				config.getProperty("validPassword"));
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		SupplyChainPage supplyChainPage = new SupplyChainPage();
 		TurbinePage turbinePage = new TurbinePage();
 		assertTrue(turbinePage.filterLabel().isDisplayed());
@@ -54,23 +51,23 @@ public class SupplyChain extends Page {
 		supplyChainPage.eventId().click();
 		Thread.sleep(3000);
 		assertTrue(supplyChainPage.quantity().isDisplayed());
-		assertEquals(supplyChainPage.quantity().getText() , config.getProperty("quantity"));
+		assertEquals(supplyChainPage.quantity().getText(), config.getProperty("quantity"));
 		assertTrue(supplyChainPage.leadTime().isDisplayed());
-		assertEquals(supplyChainPage.leadTime().getText() , config.getProperty("leadTime"));
+		assertEquals(supplyChainPage.leadTime().getText(), config.getProperty("leadTime"));
 		assertTrue(supplyChainPage.demandDate().isDisplayed());
-		assertEquals(supplyChainPage.demandDate().getText() , config.getProperty("demandDate"));
+		assertEquals(supplyChainPage.demandDate().getText(), config.getProperty("demandDate"));
 		driver.switchTo().frame(supplyChainPage.avaibilityStatusiFrame2());
 		assertTrue(supplyChainPage.avaibilityStatus().isDisplayed());
-		assertEquals(supplyChainPage.avaibilityStatus().getAttribute("src") , config.getProperty("indicAvaibilityStatus"));
+		assertEquals(supplyChainPage.avaibilityStatus().getAttribute("src"),
+				config.getProperty("indicAvaibilityStatus"));
 	}
 
-	@Test 
+	@Test
 	public void verifyBearingsToBeReplacedAvailability() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginApp(config.getProperty("validUsername"),
-				config.getProperty("validPassword"));
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		SupplyChainPage supplyChainPage = new SupplyChainPage();
 		TurbinePage turbinePage = new TurbinePage();
 		assertTrue(turbinePage.filterLabel().isDisplayed());
@@ -82,18 +79,17 @@ public class SupplyChain extends Page {
 		supplyChainPage.eventId10523().click();
 		supplyChainPage.eventId().click();
 		String eventIDSelectedValue = supplyChainPage.eventIDSelectedValue();
-		driver.switchTo().frame(supplyChainPage.verifyBearingsToBeReplacedAvailabilitySectioniFrame());		
+		driver.switchTo().frame(supplyChainPage.verifyBearingsToBeReplacedAvailabilitySectioniFrame());
 		assertTrue(supplyChainPage.categoryHierarchy().isDisplayed());
-		assertEquals(eventIDSelectedValue, supplyChainPage.categoryHierarchy().getText());		
+		assertEquals(eventIDSelectedValue, supplyChainPage.categoryHierarchy().getText());
 	}
 
-	@Test 
+	@Test
 	public void validateFocusMode() throws IOException, InterruptedException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginApp(config.getProperty("validUsername"),
-				config.getProperty("validPassword"));
+		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		SupplyChainPage supplyChainPage = new SupplyChainPage();
 		TurbinePage turbinePage = new TurbinePage();
 		assertTrue(turbinePage.filterLabel().isDisplayed());
@@ -107,7 +103,7 @@ public class SupplyChain extends Page {
 		assertTrue(supplyChainPage.backToReportButton().isDisplayed());
 		assertFalse(supplyChainPage.focusModeButton().isDisplayed());
 		supplyChainPage.backToReportButton().click();
-		assertTrue(supplyChainPage.focusModeButton().isDisplayed());	
+		assertTrue(supplyChainPage.focusModeButton().isDisplayed());
 	}
 
 	@Test(enabled = true)
@@ -277,41 +273,45 @@ public class SupplyChain extends Page {
 		assertTrue(supplychain.productEventIdLabel().isDisplayed());
 	}
 
-
 	@Test(enabled = true)
 	public void TurbineModule() throws IOException, InterruptedException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
-		CommonUtilities objCommon=new CommonUtilities();
+		CommonUtilities objCommon = new CommonUtilities();
 		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		Thread.sleep(10000);
 		SupplyChainPage objSupplyChain = new SupplyChainPage();
 		objSupplyChain.clickSupplyChainLink();
 		Thread.sleep(20000);
 		System.out.println("Clicked ELement");
-		String[] arrayofValues= new String[200];
-		String[] filepath = new String[]{"SupplyChain_TurbineModel.csv","SupplyChain_TurbineID.csv","SupplyChain_TurbineAsset.csv","SupplyChain_TurbinePosition.csv","SupplyChain_TurbineEventID.csv"};
+		String[] arrayofValues = new String[200];
+		String[] filepath = new String[] { "SupplyChain_TurbineModel.csv", "SupplyChain_TurbineID.csv",
+				"SupplyChain_TurbineAsset.csv", "SupplyChain_TurbinePosition.csv", "SupplyChain_TurbineEventID.csv" };
 		driver.switchTo().frame(0);
 		Thread.sleep(10000);
 		List<WebElement> listofDropDown = driver.findElements(By.xpath("//div[@class='slicer-content-wrapper']"));
 
-		//listofDropDown = driver.findElements(By.xpath("//i[@class='dropdown-chevron powervisuals-glyph chevron-down']"));
-		System.out.println("Starts with"+listofDropDown.size());
+		// listofDropDown = driver.findElements(By.xpath("//i[@class='dropdown-chevron
+		// powervisuals-glyph chevron-down']"));
+		System.out.println("Starts with" + listofDropDown.size());
 		for (int i = 0; i < listofDropDown.size(); i++) {
-			WebElement ele =listofDropDown.get(i);
+			WebElement ele = listofDropDown.get(i);
 			ele.click();
 			Thread.sleep(3000);
-			List<WebElement>moreOptionsDrp = driver.findElements(By.xpath("//span[@class='slicer-header-clear enable-hover']"));
+			List<WebElement> moreOptionsDrp = driver
+					.findElements(By.xpath("//span[@class='slicer-header-clear enable-hover']"));
 			Thread.sleep(5000);
 			moreOptionsDrp.get(i).click();
 			driver.findElement(By.cssSelector("button[aria-label=\"More options\"]>i")).click();
 			Thread.sleep(3000);
-			driver.findElement(By.cssSelector("i[class=\"dropdown-icon itemIcon glyphicon pbi-glyph-export glyph-small\"")).click();
+			driver.findElement(
+					By.cssSelector("i[class=\"dropdown-icon itemIcon glyphicon pbi-glyph-export glyph-small\""))
+					.click();
 			Thread.sleep(3000);
-			Set<String>handles =driver.getWindowHandles();
-			System.out.println("Size is"+handles.size());
+			Set<String> handles = driver.getWindowHandles();
+			System.out.println("Size is" + handles.size());
 			driver.switchTo().activeElement();
 			Select select = new Select(driver.findElement(By.xpath("//*[@id=\"formatSelect\"]")));
 			select.selectByValue("1");
@@ -322,9 +322,6 @@ public class SupplyChain extends Page {
 		}
 
 	}
-
-
-
 
 	@AfterMethod(enabled = true)
 	public void tearDown() {
