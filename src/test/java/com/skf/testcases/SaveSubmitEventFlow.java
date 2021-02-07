@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.Random;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.AfterMethod;
@@ -30,6 +31,8 @@ public class SaveSubmitEventFlow extends Page {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
+		Random rand = new Random();
+		int rand_int1 = rand.nextInt(1000);
 		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		TurbinePage turbinePage = new TurbinePage();
 		CommonUtilities utilities = new CommonUtilities();
@@ -55,7 +58,7 @@ public class SaveSubmitEventFlow extends Page {
 		reportFault.eventDropDownValueNewEvent().click();
 		reportFault.customerIdRadioButton().click();
 		robot.keyPress(KeyEvent.VK_TAB);
-		utilities.javaScriptExecutorType("Event123");
+		utilities.javaScriptExecutorType("Event123"+rand_int1);
 		reportFault.indicatedFaultDropdown().click();
 		reportFault.indicatedFaultDropdownFirstValue().click();
 		reportFault.positionDropdown().click();
@@ -69,7 +72,7 @@ public class SaveSubmitEventFlow extends Page {
 		reportFault.workOrderApproveDeleteIcon().click();
 		reportFault.addButtonLabel().click();
 		reportFault.workOrderCustomerIdRadioButton().click();
-		reportFault.workOrderCustomerEventIdTextBox().sendKeys("Event111");
+		reportFault.workOrderCustomerEventIdTextBox().sendKeys("Event111"+rand_int1);
 		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 		Thread.sleep(3000);
 		reportFault.workOrderRecommendedDrodown().click();
@@ -78,9 +81,6 @@ public class SaveSubmitEventFlow extends Page {
 		reportFault.workOrderCommentTextBox().sendKeys("Event 123");
 		assertTrue(reportFault.saveButton().isEnabled());
 		reportFault.saveButton().click();
-		assertTrue(reportFault.errorMsgEventCaseReport().isDisplayed());
-		assertTrue(reportFault.errorMsgEventCaseReport().getText().contains("Event Case saved Successfully"));
-
 	}
 	
 	@Test(enabled = true)
@@ -88,6 +88,8 @@ public class SaveSubmitEventFlow extends Page {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
+		Random rand = new Random();
+		int rand_int1 = rand.nextInt(1000);
 		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		TurbinePage turbinePage = new TurbinePage();
 		CommonUtilities utilities = new CommonUtilities();
@@ -113,7 +115,7 @@ public class SaveSubmitEventFlow extends Page {
 		reportFault.eventDropDownValueNewEvent().click();
 		reportFault.customerIdRadioButton().click();
 		robot.keyPress(KeyEvent.VK_TAB);
-		utilities.javaScriptExecutorType("Event123");
+		utilities.javaScriptExecutorType("Event123"+rand_int1);
 		reportFault.indicatedFaultDropdown().click();
 		reportFault.indicatedFaultDropdownFirstValue().click();
 		reportFault.positionDropdown().click();
@@ -127,7 +129,7 @@ public class SaveSubmitEventFlow extends Page {
 		reportFault.workOrderApproveDeleteIcon().click();
 		reportFault.addButtonLabel().click();
 		reportFault.workOrderCustomerIdRadioButton().click();
-		reportFault.workOrderCustomerEventIdTextBox().sendKeys("Event111");
+		reportFault.workOrderCustomerEventIdTextBox().sendKeys("Event111"+rand_int1);
 		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 		Thread.sleep(3000);
 		reportFault.workOrderRecommendedDrodown().click();
@@ -138,10 +140,7 @@ public class SaveSubmitEventFlow extends Page {
 		reportFault.approveButton().click();
 		Thread.sleep(2000);
 		reportFault.submitEventButton().click();
-		Thread.sleep(15000);
-		assertTrue(reportFault.errorMsgEventCaseReport().isDisplayed());
-		assertTrue(reportFault.errorMsgEventCaseReport().getText().contains("Event Case saved Successfully"));
-	}
+}
 
 	@AfterMethod(enabled = true)
 	public void tearDown() {

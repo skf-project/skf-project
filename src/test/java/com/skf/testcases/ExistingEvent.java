@@ -89,6 +89,7 @@ public class ExistingEvent extends Page {
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		TurbinePage turbinePage = new TurbinePage();
+		Thread.sleep(10000);
 		assertTrue(turbinePage.turbineoverviewlabel().isDisplayed());
 		turbinePage.turbineDropdown().click();
 		turbinePage.turbinedatafield().sendKeys("WO B2 15550821");
