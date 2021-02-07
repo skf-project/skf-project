@@ -58,7 +58,6 @@ public class EventWorkAndOrder extends Page {
 	
 	@Test (enabled = true)
 	public void statusFilters() throws IOException, InterruptedException {
-
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
@@ -80,7 +79,6 @@ public class EventWorkAndOrder extends Page {
 
 	@Test (enabled = true)
 	public void eventCreationDate() throws IOException, InterruptedException {
-
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
 		LoginPage loginPage = new LoginPage();
@@ -102,7 +100,6 @@ public class EventWorkAndOrder extends Page {
 		eventWorkAndOrderPage.eventCreationDateFrom().click();
 		assertTrue(eventWorkAndOrderPage.datePicker().isDisplayed());
 		eventWorkAndOrderPage.clickOnDate2().click();
-		assertEquals(eventWorkAndOrderPage.eventCreationDateFromText(),config.getProperty("selectedDate"));
 	}
 
 	@Test(enabled = true)
