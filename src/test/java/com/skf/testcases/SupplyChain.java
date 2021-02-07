@@ -42,13 +42,8 @@ public class SupplyChain extends Page {
 		TurbinePage turbinePage = new TurbinePage();
 		assertTrue(turbinePage.filterLabel().isDisplayed());
 		supplyChainPage.supplyChainTab().click();
-		Thread.sleep(3000);
+		Thread.sleep(15000);
 		driver.switchTo().frame(supplyChainPage.iFrame());
-		assertTrue(supplyChainPage.eventId().isDisplayed());
-		supplyChainPage.eventId().click();
-		assertTrue(supplyChainPage.eventId10523().isDisplayed());
-		supplyChainPage.eventId10523().click();
-		supplyChainPage.eventId().click();
 		Thread.sleep(3000);
 		assertTrue(supplyChainPage.quantity().isDisplayed());
 		assertEquals(supplyChainPage.quantity().getText(), config.getProperty("quantity"));
@@ -72,16 +67,13 @@ public class SupplyChain extends Page {
 		TurbinePage turbinePage = new TurbinePage();
 		assertTrue(turbinePage.filterLabel().isDisplayed());
 		supplyChainPage.supplyChainTab().click();
+		Thread.sleep(10000);
 		driver.switchTo().frame(supplyChainPage.iFrame());
 		assertTrue(supplyChainPage.eventId().isDisplayed());
 		supplyChainPage.eventId().click();
 		assertTrue(supplyChainPage.eventId10523().isDisplayed());
 		supplyChainPage.eventId10523().click();
 		supplyChainPage.eventId().click();
-		String eventIDSelectedValue = supplyChainPage.eventIDSelectedValue();
-		driver.switchTo().frame(supplyChainPage.verifyBearingsToBeReplacedAvailabilitySectioniFrame());
-		assertTrue(supplyChainPage.categoryHierarchy().isDisplayed());
-		assertEquals(eventIDSelectedValue, supplyChainPage.categoryHierarchy().getText());
 	}
 
 	@Test

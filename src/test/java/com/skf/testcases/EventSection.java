@@ -71,7 +71,7 @@ public class EventSection extends Page {
 		CommonUtilities utilities = new CommonUtilities();
 		ReportFaultPage reportFault = new ReportFaultPage();
 		Robot robot = new Robot();
-		
+		Thread.sleep(10000);
 		turbinePage.windFarmSearchDropdown().click();
 		turbinePage.windFarmSearchSeeAllSearchResult().click();
 		utilities.javaScriptExecutorType("WO B2 15550821");
@@ -94,6 +94,7 @@ public class EventSection extends Page {
 		robot.keyPress(KeyEvent.VK_TAB);
 		utilities.javaScriptExecutorType("Event123");
 		reportFault.indicatedFaultDropdown().click();
+		Thread.sleep(2000);
 		reportFault.indicatedFaultDropdownFirstValue().click();
 		reportFault.positionDropdown().click();
 		reportFault.positionDropdownFirstValue().click();
@@ -102,6 +103,7 @@ public class EventSection extends Page {
 		reportFault.eventCommentTextBox().sendKeys("Test123$");
 		reportFault.addButtonLabel().click();
 		//verify work order labels
+		Thread.sleep(2000);
 		assertTrue(reportFault.workOrderNewLabel().getText().contains("new"));
 		assertTrue(reportFault.workOrderCustomerIdLabel().getText().contains("Custom work order id"));
 		assertTrue(reportFault.workOrderRecommendedLabel().getText().contains("Recommended action"));
@@ -109,6 +111,7 @@ public class EventSection extends Page {
 		assertTrue(reportFault.workOrderCommentLabel().getText().contains("Comment"));
 		assertTrue(reportFault.workOrderDeleteLabel().getText().contains("Delete"));
 		reportFault.workOrderCustomerIdRadioButton().click();
+		Thread.sleep(2000);
 		reportFault.workOrderCustomerEventIdTextBox().sendKeys("Event111");
 		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 		Thread.sleep(3000);
@@ -128,7 +131,7 @@ public class EventSection extends Page {
 		CommonUtilities utilities = new CommonUtilities();
 		ReportFaultPage reportFault = new ReportFaultPage();
 		Robot robot = new Robot();
-		
+		Thread.sleep(5000);
 		turbinePage.windFarmSearchDropdown().click();
 		turbinePage.windFarmSearchSeeAllSearchResult().click();
 		utilities.javaScriptExecutorType("WO B2 15550821");
@@ -150,16 +153,20 @@ public class EventSection extends Page {
 		robot.keyPress(KeyEvent.VK_TAB);
 		utilities.javaScriptExecutorType("Event123");
 		reportFault.indicatedFaultDropdown().click();
+		Thread.sleep(2000);
 		reportFault.indicatedFaultDropdownFirstValue().click();
 		reportFault.positionDropdown().click();
 		reportFault.positionDropdownFirstValue().click();
 		reportFault.severityDropDown().click();
+		Thread.sleep(2000);
 		reportFault.severityDropdownTenthValue().click();
 		reportFault.eventCommentTextBox().sendKeys("Test123$");
 		reportFault.addButtonLabel().click();
+		Thread.sleep(2000);
 		reportFault.workOrderDeleteIcon().click();
 		assertTrue(reportFault.workOrderCancelDeleteIcon().isDisplayed());
 		reportFault.workOrderApproveDeleteIcon().click();
+		Thread.sleep(2000);
 		reportFault.addButtonLabel().click();
 		reportFault.workOrderCustomerIdRadioButton().click();
 		reportFault.workOrderCustomerEventIdTextBox().sendKeys("Event111");

@@ -19,7 +19,6 @@ import com.skf.pages.ReportFaultPage;
 import com.skf.pages.TurbinePage;
 import com.skf.utilities.CommonUtilities;
 
-
 public class CancelFlow extends Page {
 
 	String path = System.getProperty("user.dir");
@@ -36,7 +35,7 @@ public class CancelFlow extends Page {
 		CommonUtilities utilities = new CommonUtilities();
 		ReportFaultPage reportFault = new ReportFaultPage();
 		Robot robot = new Robot();
-
+		Thread.sleep(10000);
 		turbinePage.windFarmSearchDropdown().click();
 		turbinePage.windFarmSearchSeeAllSearchResult().click();
 		utilities.javaScriptExecutorType("VAS1");
@@ -73,7 +72,7 @@ public class CancelFlow extends Page {
 		assertTrue(reportFault.reportHeaderLabel().isDisplayed());
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void saveButtonFuntionalityAndErrorMessage() throws InterruptedException, IOException, AWTException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -83,7 +82,7 @@ public class CancelFlow extends Page {
 		CommonUtilities utilities = new CommonUtilities();
 		ReportFaultPage reportFault = new ReportFaultPage();
 		Robot robot = new Robot();
-
+		Thread.sleep(10000);
 		turbinePage.windFarmSearchDropdown().click();
 		turbinePage.windFarmSearchSeeAllSearchResult().click();
 		utilities.javaScriptExecutorType("WO B2 15550821");
@@ -106,12 +105,11 @@ public class CancelFlow extends Page {
 		assertTrue(reportFault.saveButton().isEnabled());
 		reportFault.saveButton().click();
 		assertTrue(reportFault.errorMsgEventCaseReport().isDisplayed());
-		reportFault.errorMsgEventCaseReport().getText()
-				.contains("Event Case Report Position is required");
+		reportFault.errorMsgEventCaseReport().getText().contains("Event Case Report Position is required");
 
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void submitEventButtonFuntionalityAndErrorMessages() throws InterruptedException, IOException, AWTException {
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -121,7 +119,7 @@ public class CancelFlow extends Page {
 		CommonUtilities utilities = new CommonUtilities();
 		ReportFaultPage reportFault = new ReportFaultPage();
 		Robot robot = new Robot();
-
+		Thread.sleep(10000);
 		turbinePage.windFarmSearchDropdown().click();
 		turbinePage.windFarmSearchSeeAllSearchResult().click();
 		utilities.javaScriptExecutorType("WO B2 15550821");
