@@ -36,7 +36,7 @@ public class TurbinePage extends Page {
 
 	public WebElement turbineNameOnHeaderPopUp() {
 		return driver.findElement(By.cssSelector(
-				".Modal-module_border__2Chp-.Modal-module_header__3mk20.Modal-module_row__2MZeo.undefined > .Modal-module_title__3abYu"));
+				".Modal-module_title__3abYu"));
 	}
 
 	public WebElement currentStatusOnHeaderPopUp() {

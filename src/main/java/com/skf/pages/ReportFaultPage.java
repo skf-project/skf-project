@@ -382,6 +382,11 @@ public class ReportFaultPage extends Page {
 		return driver.findElement(By.xpath("//div[contains(@class,'file-drop-target')]//button[contains(@class,'')]"));
 
 	}
+	
+	public WebElement imageDeleteButton() {
+		return driver.findElement(By.cssSelector(".DeleteLabel-module_deleteLabel__mtki9.ImageInput_label__1B2ac > .Icons_skfIcon__WcutW.undefined"));
+
+	}
 
 	public WebElement descriptionTextBox() {
 		return driver.findElement(By.xpath(
