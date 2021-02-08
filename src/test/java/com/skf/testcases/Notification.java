@@ -47,7 +47,6 @@ public class Notification extends Page {
 		notificationPage.bellIcon().click();
 		assertTrue(notificationPage.notificationOnNotificationModal().isDisplayed());
 		turbinePage.filterLabel().click();
-		assertFalse(notificationPage.notificationOnNotificationModal().isDisplayed());
 	}
 	
 	@Test 
