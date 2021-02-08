@@ -106,6 +106,7 @@ public class ReportFault extends Page {
 		 assertTrue(reportFaultPage.reportFaultWindFarmTickMark().isDisplayed());
 		 assertTrue(reportFaultPage.reportFaultTurbineFilter().isDisplayed());
 		 reportFaultPage.reportFaultTurbineFilter().click();
+		 Thread.sleep(2000);
 		 reportFaultPage.reportFaultTurbineFirstValue().click();
 		 Thread.sleep(10000);
 		 assertTrue(reportFaultPage.reportFaultTurbineTickMark().isDisplayed());

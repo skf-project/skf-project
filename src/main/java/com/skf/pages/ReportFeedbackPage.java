@@ -41,7 +41,7 @@ public class ReportFeedbackPage extends Page{
    }
    public WebElement dateCompletedTextBox()
    {
-	   return driver.findElement(By.cssSelector(".react-datepicker-wrapper:nth-child(11) .DatePicker-module_datePicker__1-nEf"));
+	   return driver.findElement(By.xpath("//input[@class=\" DatePicker-module_datePicker__1-nEf\"]"));
    }
   
    public WebElement submitEventFeedbackButton()

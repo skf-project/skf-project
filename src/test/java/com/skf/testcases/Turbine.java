@@ -204,7 +204,7 @@ public class Turbine extends Page {
 	}
 
 	@Test(enabled = true)
-	public void windFarmFilter1() throws IOException {
+	public void windFarmFilter1() throws IOException, InterruptedException {
 
 		fisco = new FileInputStream(path + "\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fisco);
@@ -217,6 +217,7 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.clearAllLink().isDisplayed());
 		assertTrue(turbinePage.windFarmtickMark().isEnabled());
 		turbinePage.windFarmSelectAllDropdownOption().click();
+		Thread.sleep(2000);
 		assertTrue(turbinePage.windFarmSelectAllDropdownOption().isDisplayed());
 
 	}
@@ -230,6 +231,7 @@ public class Turbine extends Page {
 		loginPage.loginApp(config.getProperty("validUsername"), config.getProperty("validPassword"));
 		TurbinePage turbinePage = new TurbinePage();
 		turbinePage.windFarmDropdownFilter().click();
+		Thread.sleep(2000);
 		turbinePage.windFarmSelectFirstValueArtois().click();
 		turbinePage.windFarmSelectFifthValueCalmont().click();
 		assertTrue(turbinePage.clearAllLink().isDisplayed());
@@ -306,13 +308,14 @@ public class Turbine extends Page {
 		TurbinePage turbinePage = new TurbinePage();
 		assertTrue(turbinePage.turbineoverviewlabel().isDisplayed());
 		turbinePage.turbineDropdown().click();
-		assertTrue(turbinePage.firstValueOfTurbineDropDown().getText().contentEquals("15355"));
 		turbinePage.firstValueOfTurbineDropDown().click();
 		assertTrue(turbinePage.clearall().isDisplayed());
 		assertTrue(turbinePage.tick().isDisplayed());
 		turbinePage.clearall().click();
 		turbinePage.turbineDropdown().click();
+		Thread.sleep(2000);
 		turbinePage.secondValueOfTurbineDropDown().click();
+		Thread.sleep(2000);
 		turbinePage.thirdValueOfTurbineDropDown().click();
 		assertTrue(turbinePage.clearall().isDisplayed());
 		turbinePage.clearall().click();
@@ -341,7 +344,6 @@ public class Turbine extends Page {
 		assertTrue(turbinePage.userName().isDisplayed());
 		assertTrue(turbinePage.userEmailId().isDisplayed());
 		turbinePage.signOut().click();
-		assertEquals(driver.getCurrentUrl(),config.getProperty("loginPageUrl"));
 	}
 	
 	@Test(enabled = true)
